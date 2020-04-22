@@ -503,11 +503,17 @@ li.b_b {
     display: block;
     width: 100px;
     height: 50px;
-    padding-top: 30px;
+    padding-top: 10px;
     line-height: 20px;
     text-align: center;
     color: #333;
     box-sizing: border-box;
+}
+.side ul li a img{
+    display: block;
+    width: 40px;
+    text-align: center;
+    margin: 0 auto;
 }
 .side ul li:last-child{
     border-bottom: 0;
