@@ -1,0 +1,78 @@
+@charset "UTF-8";
+
+.hd{
+    border-bottom: 2px solid #a72c32;
+}
+.sub_content{
+    width: 1300px;
+    margin: 0 auto;
+}
+
+.sub_content .title{
+    text-align: center;
+    height: 200px;
+    padding-top: 100px;
+    border-bottom: 1px solid #ddd;
+}
+.title h1{
+     font-size: 3em;
+    font-weight: 400;
+    color: #a72c32;
+}
+.title p{
+    padding-top: 20px;
+    font-size: 1.2em;
+}
+
+.title p strong{
+    font-size: 1.3em;
+    
+}
+.company{
+    width: 90%;
+    margin: 0 auto;
+    margin-top: 50px;
+    height: 1000px;
+    border-bottom: 1px dashed #ddd;
+}
+.company p{
+    font-size: 1.3em;
+    font-weight: 300;
+}
+.history_box{
+    width: 90%;
+    margin: 0 auto;
+    margin-top: 50px;
+    height: 1000px;
+}
+.history_box h2{
+    text-align: center;
+    font-size: 2em;
+    font-weight: 400;
+}
+.history{
+    font-size: 1.3em;
+    font-weight: 300;
+    margin-top: 50px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

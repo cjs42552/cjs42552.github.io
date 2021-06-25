@@ -1,0 +1,241 @@
+@charset "utf-8";
+/* 태블릿 */
+.hd_box,
+.vs,
+.note {
+    width: 100vw;
+}
+
+.pro,
+.qna_box,
+.ft_box {
+    width: 768px;
+}
+/*header 시작*/
+
+.hd {
+    height: 100px;
+}
+
+.logo_box {
+    left: 60px;
+    top: 30px;
+}
+
+.hd nav {
+    left: 380px;
+    top: 30px;
+}
+
+
+.navi li {
+    width: 90px;
+}
+
+/*footer 시작*/
+.ft {
+    height: 100px;
+}
+
+.ft .logo {
+    padding-top: 20px;
+}
+
+.ft .address {
+    margin-top: 5px;
+}
+
+.ft .copy {
+    margin-top: 5px;
+    margin-bottom: 15px;
+}
+/*visual 시작*/
+.visual {
+    height: 680px;
+}
+
+.vs {
+    height: 680px;
+}
+.vs .text_box {
+    width: 400px;
+    height: 250px;
+    top: 60px;
+    left: 90px;
+}
+
+.text_box p {
+    font-size: 1.8em;
+    line-height: 45px;
+}
+
+.text_box .sm {
+    font-size: 1.1em;
+}
+.img_box div img{
+    width: 80%;
+}
+
+.img_box .item1 {
+    right: 250px;
+    top: 190px;
+}
+
+.img_box .item2 {
+    width: 25%;
+    right: 0px;
+    top: 290px;
+}
+
+.img_box .item3 {
+    left: 300px;
+    bottom: 160px;
+}
+
+.img_box .item4 {
+    display: none;
+}
+
+.img_box .item5 {
+    right: 120px;
+    bottom: 50px;
+}
+
+.img_box .item6 {
+    right: 430px;
+    bottom: 50px;
+}
+
+/*content 시작*/
+.pro .tit {
+    margin-top: 50px;
+}
+
+.pro_box {
+    width: 768px;
+    height: 300px;
+    margin-top: 50px;
+}
+.pro .pro_list {
+    width: 2310px;
+}
+
+.pro_list li {
+    width: 384px;
+}
+
+.pro .prev {
+    top: 220px;
+}
+
+.pro .next {
+    top: 220px;
+}
+
+.qna {
+    margin-top: 90px;
+}
+
+.qna_box .text_box {
+    position: absolute;
+    left: 615px;
+    top: 50px;
+    z-index: 99;
+}
+
+.qna_box .text_box .tit2 {
+    font-size: 2.2em;
+}
+
+.qna_box .text_box .txt {
+    line-height: 30px;
+    font-size: 1em;
+}
+
+.qna_box .more {
+    display: none;
+}
+.qna_list_box {
+    display: none;
+}
+
+.note_box {
+    height: 410px;
+}
+
+.note_box .text_box .prev {
+    left: 250px;
+}
+
+.note_box .text_box .next {
+    right: 250px;
+}
+
+.note_box .note_list {
+    position: absolute;
+    left: -190px;
+}
+
+.note_box .note_list li {
+    width: 250px;
+    margin-left: 20px;
+}
+
+.note_list .list_box {
+    width: 320px;
+    height: 260px;
+    position: relative;
+}
+
+.list_box .ico {
+    font-size: .9em;
+    line-height: 20px;
+}
+
+.list_box .tit {
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+.list_box .txt {
+    width: 230px;
+}
+
+.list_box .more {
+    bottom: 15px;
+    right: 90px;
+}
+/*sub1*/
+
+.sub_content{
+    width: 760px;
+}
+
+/*sub2*/
+.sub_content{
+    width: 760px;
+}
+
+.hd_tit{
+    width: 760px;
+}
+
+.cont_txt .img_box{
+    margin-left: 40px;
+}
+.img_txt{
+    width: 400px;
+    padding: 30px;
+    margin-right: 0px;
+}
+.img_txt span{
+    width: 200px;
+    height: 80px;
+    margin-left: 10px;
+}
+.img_txt a{
+    width: 80%;
+    height: 60px;
+    line-height: 60px;
+    font-size: 1.3em;
+}

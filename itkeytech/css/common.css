@@ -1,0 +1,212 @@
+@charset "UTF-8";
+
+body,
+html {
+    -ms-overflow-style: none;
+}
+
+::-webkit-scrollbar {
+    display: none;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: "나눔바른고딕", sans-serif;
+}
+
+ul,
+li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: #333;
+    display: block;
+}
+
+input,
+img,
+select,
+textarea {
+    outline: none;
+}
+
+.hd_box,
+.vs,
+.note {
+    width: 1920px;
+    margin: 0 auto;
+    position: relative;
+}
+
+.pro,
+.qna_box,
+.ft_box {
+    width: 1300px;
+    margin: 0 auto;
+    position: relative;
+}
+
+.prev,
+.next {
+    cursor: pointer;
+}
+
+/*header 시작*/
+.hd {
+    height: 150px;
+}
+
+.logo_box {
+    position: absolute;
+    width: 264px;
+    height: 50px;
+    left: 120px;
+    top: 50px;
+}
+
+.hd nav {
+    display: block;
+    position: absolute;
+    top: 50px;
+    left: 450px;
+    height: 40px;
+
+}
+
+.hd .navi {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+.navi li {
+    float: left;
+    width: 100px;
+    text-align: center;
+    margin-left: 20px;
+    height: 100%;
+    line-height: 40px;
+    font-size: 1.2em;
+    font-weight: 400;
+}
+
+.navi li.item1 {
+    margin-left: 0;
+}
+
+.navi a {
+    width: 100%;
+    height: 100%;
+}
+
+.navi a::after {
+    display: block;
+    content: "";
+    width: 0;
+    height: 3px;
+    background: #a72c32;
+}
+
+.navi li a:hover::after {
+    width: 100%;
+    transition: .4s;
+}
+
+/*footer 시작*/
+.ft {
+    height: 200px;
+    border-top: 2px solid #a72c32;
+    bottom: 0;
+}
+
+.ft .logo {
+    width: 300px;
+    height: 50px;
+    line-height: 50px;
+    margin: 0 auto;
+    padding-top: 50px;
+}
+
+.ft .address {
+    text-align: center;
+    margin-top: 10px;
+}
+
+.ft .copy {
+    text-align: center;
+    margin-top: 10px;
+}
+
+.m_menu {
+    opacity: 0;
+    visibility: hidden;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0,0,0,.8);
+    position: fixed;
+    left: 0;
+    top: 0;
+    transition: .8s;
+}
+
+.menu_btn{
+    display: none;
+}
+.m_menu.on{
+    opacity: 1;
+    visibility: visible;
+    transition: 1s;
+}
+.m_menu .close{
+    width: 20px;
+    height: 20px;
+    position: fixed;
+    right: 10px;
+    top: 10px;
+    background-image: url(../img/close_btn.png);
+    background-size: cover;
+}
+.menu{
+    width: 60vw;
+    height: 100vh;
+    background: #fff;
+    position: fixed;
+    left: -62vw;
+    top: 0;
+    box-shadow: 0 0 20px rgba(0,0,0,.5);
+    transition: .8s;
+}
+.menu.on{
+    left: 0;
+    transition: 1s;
+}
+.menu .m_hd{
+    width: 100%;
+    height: 100px;
+    background: #a72c32;
+}
+.menu .logo{
+    width: 60%;
+    height: 100px;
+    margin: 0 auto;
+    position: relative;
+    top: calc(100% - 70px);
+}
+.menu .logo img{
+    display: block;
+    width: 100%;
+}
+.menu .navi{
+    width: 100%;
+}
+.menu .navi li{
+    display: block;
+    width: 100%;
+    height: 80px;
+    line-height: 80px;
+    margin-left: 0;
+    border-bottom: 1px solid #ddd;
+}

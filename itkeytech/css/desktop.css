@@ -1,0 +1,51 @@
+@charset "utf-8";
+/* 데스크탑 */
+.hd_box,
+.vs,
+.note {
+    width: 1900px;
+}
+
+.pro,
+.qna_box,
+.ft_box {
+    width: 1300px;
+}
+/*header 시작*/
+.hd {
+    height: 100px;
+}
+
+.logo_box {
+    top: 30px;
+}
+
+.hd nav {
+    top: 30px;
+}
+
+/*footer 시작*/
+.ft {
+    height: 100px;
+}
+
+.ft .logo {
+    padding-top: 20px;
+}
+
+.ft .address {
+    margin-top: 5px;
+}
+
+.ft .copy {
+    margin-top: 5px;
+    margin-bottom: 15px;
+}
+
+/*sub2*/
+.img_txt a{
+    width: 70%;
+    height: 60px;
+    line-height: 60px;
+    font-size: 1.4em;
+}

@@ -1,0 +1,368 @@
+@charset "utf-8";
+
+/*모바일 */
+.hd_box,
+.vs,
+.note {
+    width: 100vw;
+}
+
+.pro,
+.qna_box,
+.ft_box {
+    width: 320px;
+}
+
+/*header 시작*/
+
+.hd {
+    height: 100px;
+}
+
+.logo_box {
+    position: relative;
+    width: 200px;
+    margin: 0 auto;
+    left: 0;
+    top: 30px;
+}
+
+.logo_box img {
+    width: 100%;
+}
+
+.hd nav {
+    display: none;
+}
+
+.hd .menu_btn {
+    display: block;
+    width: 35px;
+    height: 35px;
+    position: absolute;
+    top: 30px;
+    left: 30px;
+    background-image: url(../img/menu_btn.png);
+    background-size: cover;
+}
+
+/*footer 시작*/
+.ft {
+    height: 100px;
+}
+
+.ft .logo {
+    width: 200px;
+    padding-top: 20px;
+}
+
+.ft .logo img {
+    width: 100%;
+}
+
+.ft .address {
+    margin-top: 5px;
+}
+
+.ft .copy {
+    margin-top: 5px;
+    margin-bottom: 15px;
+}
+
+/*visual 시작*/
+.visual {
+    height: 680px;
+}
+
+.vs {
+    height: 680px;
+}
+
+.vs .text_box {
+    width: 300px;
+    top: 60px;
+    left: 60px;
+}
+
+.text_box p {
+    font-size: 20px;
+    line-height: 30px;
+}
+
+.text_box .sm {
+    font-size: 14px;
+}
+
+.vs .text_box .more {
+    width: 150px;
+    height: 40px;
+    line-height: 40px;
+    font-size: 12px;
+}
+
+.img_box div img {
+    width: 70%;
+}
+
+.img_box .item1 {
+    display: none;
+}
+
+.img_box .item2 {
+    display: none;
+}
+
+.img_box .item3 {
+    display: none;
+}
+
+.img_box .item4 {
+    display: none;
+}
+
+.img_box .item5 {
+    right: -70px;
+    bottom: 60px;
+}
+
+.img_box .item6 {
+    right: 230px;
+    bottom: 60px;
+}
+
+/*content 시작*/
+.pro .tit {
+    font-size: 24px;
+    margin-top: 30px;
+}
+
+.pro_box {
+    width: 320px;
+    height: 300px;
+    margin-top: 30px;
+}
+
+.pro .pro_list {
+    width: 1920px;
+}
+
+.pro_list li {
+    border-right: 0;
+    width: 320px;
+}
+
+.pro .prev {
+    top: 160px;
+}
+
+.pro .next {
+    top: 160px;
+}
+
+.qna {
+    margin-top: 30px;
+}
+
+.qna_box .text_box {
+    position: absolute;
+    left: 0;
+    top: 20px;
+    z-index: 0;
+}
+
+.qna_box .text_box .tit2 {
+    font-size: 24px;
+}
+
+.qna_box .text_box .txt {
+    line-height: 30px;
+    font-size: 16px;
+}
+
+.qna_box .more {
+    display: none;
+}
+
+.qna_list_box {
+    display: none;
+}
+
+.qna_big_img {
+    width: 320px;
+    top: 140px;
+}
+
+.qna_big_img .qna_img {
+    width: 320px;
+    height: 250px;
+}
+
+.qna_big_img span {
+    margin-top: 10px;
+    font-size: 14px;
+}
+
+.note_box {
+    height: 410px;
+}
+
+.note_box .text_box .tit {
+    font-size: 24px;
+}
+
+.note_box .text_box .prev {
+    left: 60px;
+}
+
+.note_box .text_box .next {
+    right: 60px;
+}
+
+.note_box .note_list {
+    width: 300%;
+    height: 100%;
+    position: absolute;
+    left: -440px;
+}
+
+.note_box .note_list li {
+    width: 250px;
+    margin-left: 20px;
+}
+
+.list_box .ico {
+    font-size: 12px;
+    line-height: 20px;
+}
+
+.list_box .tit {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.list_box .txt {
+    font-size: 16px;
+    width: 230px;
+}
+
+.list_box .more {
+    font-size: 14px;
+    bottom: 15px;
+    right: 90px;
+}
+
+/*sub1*/
+
+.sub_content {
+    width: 320px;
+}
+
+.sub_content .title {
+    height: 70px;
+    padding-top: 30px;
+}
+
+.title h1 {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.title p {
+    padding-top: 10px;
+    font-size: 12px;
+}
+
+.title p strong {
+    font-size: 14px;
+
+}
+
+.company {
+    margin-top: 30px;
+    height: 500px;
+}
+
+.company p {
+    font-size: 14px;
+    font-weight: 400;
+}
+
+.history_box {
+    margin-top: 30px;
+    height: 500px;
+}
+
+.history_box h2 {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.history {
+    font-size: 14px;
+    font-weight: 400;
+    margin-top: 20px;
+}
+
+/*sub2*/
+.hd_tit {
+    width: 320px;
+}
+
+.hd_tit p {
+    font-size: 14px;
+}
+
+.cont_txt {
+    margin-top: 30px;
+    height: 650px;
+}
+
+.cont_txt .img_box {
+    width: 100%;
+    height: 400px;
+    float: none;
+    margin-left: 0px;
+    border-bottom: 1px solid #ddd;
+}
+
+.img_box img {
+    margin: 0 auto;
+}
+
+.img_txt {
+    width: 100%;
+    height: 250px;
+    float: none;
+    margin-right: 0px;
+    padding: 20px;
+    border-left: 0;
+    position: relative;
+}
+
+.img_txt p {
+    width: 100%;
+    font-size: 16px;
+}
+
+.img_txt a {
+    position: absolute;
+    display: block;
+    bottom: 50px;
+    width: 80%;
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.detail_txt {
+    width: 100%;
+    height: 500px;
+    padding: 20px;
+}
+
+.detail_txt p {
+    font-size: 12px;
+    font-weight: 300;
+}
