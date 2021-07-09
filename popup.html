@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>팝업연습</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://code.jquery.com/jquery-latest.js"></script>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        a{
+            text-decoration: none;
+            color: #333;
+        }
+        ul, li, ol, dl {
+            list-style: none;
+        }
+        input, img{
+            border: none;
+            outline: 0;
+        }
+        /* 메인 */
+        .left{
+            width: 50%;
+            height: 100vh;
+            float: left;
+            background: #a00c0d;
+        }
+        .right{
+            width: 50%;
+            height: 100vh;
+            float: right;
+            background: #333;
+        }
+        .open{
+            width: 300px;
+            height: 200px;
+            position: fixed;
+            left: calc(50% - 150px);
+            top: calc(50% - 100px);
+            font-size: 30px;
+            font-weight: bolder;
+            overflow: hidden;
+            z-index: 9;
+
+        }
+        .open span{
+            width: 50%;
+            height: 100px;
+            position: absolute;
+            text-align: center;
+            line-height: 100px;
+            cursor: pointer;
+        }
+        .open span:hover{
+            animation-play-state: paused ;
+        }
+        .open .dark{
+            background:#333;
+            left: 0;
+            top: 100px;
+            
+            color: #a00c0d;
+            animation: dark-mov 3s infinite;
+        }
+        @keyframes dark-mov {
+            0%{
+                top: 0;
+            }
+            50%{
+                top:  100px;
+            }
+            100%{
+                top: 0;
+            }
+        }
+        .open .red{
+            background: #a00c0d;
+            right: 0;
+            top: 0;
+            
+            color: #333;
+            animation: red-mov 3s infinite;
+        }
+        @keyframes red-mov {
+            0%{
+                top: 100px;
+            }
+            50%{
+                top: 0;
+            }
+            100%{
+                top: 100px;
+            }
+        }
+        /* 팝업 */
+        .pop_box{
+            width: 100%;
+            height: 100vh;
+            position: fixed;
+            left: 0;
+            top: 0;
+            background: rgba(0,0,0,.3);
+            z-index: 99;
+            opacity: 0;
+            visibility: hidden;
+        }
+        
+        .pop_box.on{
+            opacity: 1;
+            visibility: visible;
+            transition: all .5s;
+        }
+        
+        .popup{
+            width: 300px;
+            height: 400px;
+            position: fixed;
+            left: calc(50% - 150px);
+            top : calc(50% - 200px);
+            background: #fff;
+            border-radius: 30px;
+            box-shadow: 0 10px 20px rgba(0,0,0,.5);
+            z-index: 999;
+            opacity: 0;
+            visibility: hidden;
+        }
+        .popup.on{
+            
+            opacity: 1;
+            visibility: visible;
+            transition: all .5s;
+        }
+        .popup .p_box{
+            width: 80%;
+            height: 80%;
+            position: relative;
+            top: calc(50% - 40%);
+            left:  calc(50% - 40%);
+        }
+        .fa-times{
+            position: absolute;
+            right: 20px;
+            top: 20px;
+            cursor: pointer;
+            
+        }
+        .p_box h1{
+            font-size: 30px;
+            text-align: left;
+        }
+        .p_box .input_box{
+            position: absolute;
+            width: 100%;
+            height: 120px;
+            top: calc(50% - 70px);
+        }
+        .p_box .id_box , .p_box .pw_box{
+            width: 100%;
+            height: 50px;
+            margin-top: 10px;
+            border-bottom: 1px solid #cacaca;
+        }
+        .p_box .id_box input , .p_box .pw_box input{
+            width: 90%;
+            height: 100%;
+            height: 100%;
+        }
+        .p_box .id_box  i, .p_box .pw_box  i{
+            width: 10%;
+            height: 100%;
+            color: #cacaca;
+        }
+        .p_box .login_btn{
+            display: block;
+            width: 100%;
+            height: 50px;
+            background: #a00c0d;
+            position: absolute;
+            bottom: 0;
+            border-radius: 10px;
+            font-size: 16px;
+            color: #fff;
+            padding: 13px;
+            text-align: center;
+            transition: all .5s;
+        }
+        .login_btn .arror{
+            margin-left: 10px;
+        }
+
+        /* 효과 */
+        .p_box .id_box:hover  input::placeholder ,.p_box .id_box:hover i , .p_box .pw_box:hover  input::placeholder, .p_box .pw_box:hover i{
+            color: #a00c0d;
+        }
+        .p_box .id_box:hover, .p_box .pw_box:hover{
+            border-bottom: 1px solid #a00c0d;
+        }
+        .login_btn:hover{
+            background: transparent;
+            border: 1px solid #a00c0d;
+            color: #a00c0d;
+        }
+    </style>
+    <script>
+        $(document).ready(function(){
+            
+            $(".open .dark").click(function(){
+                $(".pop_box").addClass("on");
+                $(".popup").addClass("on");
+            });
+            $(".pop_box").click(function(){
+                $(".pop_box").removeClass("on");
+                $(".popup").removeClass("on");
+            });
+            $(".fa-times").click(function(){
+                $(".pop_box").removeClass("on");
+                $(".popup").removeClass("on");
+            });
+            $(".id_box input").focusin(function(){
+                $(".id_box").css("border-bottom","1px solid #a00c0d");
+                $(".id_box i").css("color","#a00c0d");
+            });
+            $(".id_box input").focusout(function(){
+                $(".id_box").css("border-bottom","1px solid #cacaca");
+                $(".id_box i").css("color","#cacaca");
+            });
+            $(".pw_box input").focusin(function(){
+                $(".pw_box").css("border-bottom","1px solid #a00c0d");
+                $(".pw_box i").css("color","#a00c0d");
+            });
+            $(".pw_box input").focusout(function(){
+                $(".pw_box").css("border-bottom","1px solid #cacaca");
+                $(".pw_box i").css("color","#cacaca");
+            });
+        });
+    </script>
+</head>
+<body>
+
+    
+    <div class="pop_box"></div>
+    <div class="popup_box">
+        <div class="popup">
+            <i class="fa fa-times"></i>
+            <div class="p_box">
+                <h1>LOGIN</h1>
+                <div class="input_box">
+                    <div class="id_box">
+                        <input type="text" name="" id="" placeholder="ID"><i class="fa fa-user"></i> 
+                    </div>
+                    <div class="pw_box">
+                        <input type="password" name="" id="" placeholder="Password"><i class="fa fa-lock"></i>
+                    </div> 
+                </div>
+                <a href="" class="login_btn"><span>Login</span><span class="arror">→</span></a>
+            </div>
+        </div>
+    </div>
+    
+    
+
+    <div class="main">
+        <div class="open">
+            <span class="dark">click!</span>
+            <span class="red">me!</span> 
+        </div>
+        <div class="left">
+        </div>
+        <div class="right">
+        </div>
+    </div>
+</body>
+</html>
