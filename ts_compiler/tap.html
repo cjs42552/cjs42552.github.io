@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./themify-icons.css">
+    <script src="https://code.jquery.com/jquery-latest.js"></script>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            
+            box-sizing: border-box;
+        }
+        ul, li{
+            list-style: none;
+        }
+        html, body{
+            background: #333;
+            width: 100%;
+            height: 100%;
+        }
+        .main{
+            width: 500px;
+            height: 400px;
+            margin: 0 auto;
+            border: 2px solid #a00c0d;
+            position: relative;
+            top: calc(50% - 200px);
+        }
+        .tap_btn {
+            width: 100%;
+            height: 100px;
+            border-bottom: 2px solid #a00c0d;
+        }
+        .tap_btn .btn{
+            width: 20%;
+            height: 100%;
+            float: left;
+            text-align: center;
+            line-height: 100px;
+            color: #fff;
+            font-size: 20px;
+            cursor: pointer;
+        }
+        .btn.on{
+            background:#a00c0d;
+        }
+        .tap_cont{
+            width: 100%;
+            height: 300px;
+            color: #fff;
+            overflow: hidden;
+            position: relative;
+            left: 0;
+            top: 0;
+        }
+        .tap_cont .cont{
+            width: 100%;
+            height: 100%;
+            position:absolute;
+            left: 0;
+            top: 0;
+            visibility: hidden;
+            opacity: 0;
+        }
+        .cont.on{
+            visibility:visible;
+            opacity: 1;
+            transition: all .5s;
+        }
+    </style>
+    <script>
+        $(document).ready(function(){
+            $(".tap_btn li").click(function(){
+                var idx = $(this).index();
+                $(".tap_btn li").removeClass("on");
+                $(".tap_btn li").eq(idx).addClass("on");
+                $(".tap_cont .cont").removeClass("on");
+                $(".tap_cont .cont").eq(idx).addClass("on");
+            });
+        }); 
+    </script>
+</head>
+<body>
+    <div class="main">
+        <div class="tap_btn">
+            <ul>
+                <li class="btn item1 on"><span class="ti-home"></span></li>
+                <li class="btn item2"><span class="ti-search"></span></li>
+                <li class="btn item3"><span class="ti-plus"></span></li>
+                <li class="btn item4"><span class="ti-heart"></span></li>
+                <li class="btn item5"><span class="ti-user"></span></li>
+            </ul>
+        </div>
+        <div class="tap_cont">  
+            <div class="cont item1 on">홈입니당.👩👨🧑👧</div>
+            <div class="cont item2 ">검색탭 입니당.🔍</div>
+            <div class="cont item3 ">업로드 하세영.o((>ω< ))o</div>
+            <div class="cont item4">💖🧡💛💚💙💜🤎🖤🤍💔</div>
+            <div class="cont item5">안녕 🙌 날 소개하지 내이름은 김하온...</div>
+        </div>
+    </div>
+</body>
+</html>
