@@ -79,8 +79,8 @@ img{
     background: url(../img/next_btn2.png) no-repeat center center;
     right: 14px;
 }
-/* @media screen and (max-width :1000px) {
+@media screen and (max-width :1000px) {
     .main{
-        width: 100vw;
+        width: 100%;
     }
-} */
+}
