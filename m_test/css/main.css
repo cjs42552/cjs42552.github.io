@@ -80,7 +80,24 @@ img{
     right: 14px;
 }
 @media screen and (max-width :1000px) {
-    .main{
+    .dodram_wrap .main{
         width: 100%;
+        overflow: hidden;
+    }
+    .dodram_wrap img{
+        width: 100%;
+    }
+    .dodram_wrap .s_box .f_box{
+        width: 100%;
+        background: #f7f7f7;
+    }
+    .dodram_wrap .s_box .f_box .swiper {
+        width: 51%;
+    }
+    /* .dodram_wrap .s_box .f_box .swiper img{
+        width: 100% !important;
+    } */
+    .dodram_wrap .s_box .f_box .s_text1{
+        width: 49%;
     }
 }
