@@ -49,7 +49,11 @@
     align-items: center;
     justify-content: center;
 }
-.swiper-slide:nth-child(1){
+.s_02 .sw_box .mySwiper .swiper-wrapper .swiper-slide img{
+    object-fit: cover;
+    height:100%;
+}
+/* .swiper-slide:nth-child(1){
     background: url(./img/s_01.jpg) no-repeat center center;
     background-size: cover;
 }
@@ -64,7 +68,7 @@
 .swiper-slide:nth-child(4){
     background: url(./img/s_04.jpg) no-repeat center center;
     background-size: cover;
-}
+} */
 .s_02 .prevBtn{
     width: 30px;
     height: 77px;
