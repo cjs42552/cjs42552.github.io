@@ -1,0 +1,127 @@
+
+.Q_wrap{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.Q_wrap .Q_box{
+    width: 1000px;
+}
+.Q_box img{
+    display: block;
+    width: 100%;
+}
+.s_01 .gif_img{
+    position: relative;
+}
+.s_01 .gif_img .logo{
+    width: 553px;
+    position: absolute;
+    top: 380px;
+    left: calc(50% - 553px/2);
+}
+.s_02{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #f7f6ef;
+}
+.s_02 .sw_box{
+    width: 756px;
+    height: 1016px;
+    border-radius: 360px;
+    border: 2px solid #000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.s_02 .sw_box .mySwiper{
+    width: 717px;
+    height: 976px;
+    border-radius: 342px;
+    overflow: hidden;
+}
+
+.s_02 .sw_box .mySwiper .swiper-wrapper .swiper-slide{
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.swiper-slide:nth-child(1){
+    background: url(./img/s_01.jpg) no-repeat center center;
+    background-size: cover;
+}
+.swiper-slide:nth-child(2){
+    background: url(./img/s_02.jpg) no-repeat center center;
+    background-size: cover;
+}
+.swiper-slide:nth-child(3){
+    background: url(./img/s_03.jpg) no-repeat center center;
+    background-size: cover;
+}
+.swiper-slide:nth-child(4){
+    background: url(./img/s_04.jpg) no-repeat center center;
+    background-size: cover;
+}
+.s_02 .prevBtn{
+    width: 30px;
+    height: 77px;
+    background: url(./img/prev_btn.png)no-repeat center center;
+    margin-right: 24px;
+    cursor: pointer;
+}
+.s_02 .nextBtn{
+    width: 30px;
+    height: 77px;
+    background: url(./img/next_btn.png)no-repeat center center;
+    margin-left: 24px;
+    cursor: pointer;
+}
+@media screen and (max-width: 1000px) {
+    .Q_wrap .Q_box{
+        width: 100%;
+    }
+    .s_01 .gif_img .logo {
+        width: 50%;
+        position: absolute;
+        top: 35%;
+        left: calc(50% - 50%/2);
+    }
+    .s_02 .sw_box{
+        width: 75%;
+        height: calc(1016px/1.5);
+        border-radius: calc(360px/1.5);
+    }
+    .s_02 .sw_box .mySwiper{
+        width: 95%;
+        height: calc(976px/1.5);
+        border-radius: calc(342px/1.5);
+    }
+    
+}
+@media screen and (max-width: 580px) {
+    .s_02 .sw_box{
+        width: 75%;
+        height: calc(1016px/2);
+        border-radius: calc(360px/2);
+    }
+    .s_02 .sw_box .mySwiper{
+        width: 95%;
+        height: calc(976px/2);
+        border-radius: calc(342px/2);
+    }
+    .s_02 .prevBtn {
+        width: 15px;
+        height: calc(55px/2);
+        margin-right: 8px;
+        background-size: cover;
+    }
+    .s_02 .nextBtn {
+        width: 15px;
+        height: calc(55px/2);
+        margin-left: 8px;
+        background-size: cover;
+    }
+}
