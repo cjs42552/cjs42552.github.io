@@ -41,6 +41,10 @@
     height: 976px;
     border-radius: 342px;
     overflow: hidden;
+    -webkit-backface-visibility: hidden;
+    -moz-backface-visibility: hidden;
+    -webkit-transform: translate3d(0, 0, 0);
+    -moz-transform: translate3d(0, 0, 0);
 }
 
 .s_02 .sw_box .mySwiper .swiper-wrapper .swiper-slide{
