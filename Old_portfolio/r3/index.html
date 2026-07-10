@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>국민건강보험공단</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="shortcut icon" href="./image/favicon.ico">
+    <link rel="shortcut icon" href="./image/favicon.png" type="image/x-icon">
+    <link rel="stylesheet" href="./main.css">
+    <script src="https://code.jquery.com/jquery-latest.js"></script>
+    <script>
+        $(document).ready(function(){
+            $(".open").click(function(){
+                $(".menu").addClass("on");
+                $(".top_close").fadeIn();
+            }); 
+            $(".close").click(function(){
+                $(".menu").removeClass("on");
+                $(".close").fadeOut();
+            }); 
+        });
+    </script>
+</head>
+<body>
+   <header class="hd">
+      <div class="lag">
+          <ul class="ko">
+             <li><a href="#">Contact Us</a></li>
+              <li><a href="">ENG</a></li>
+              <li><a href="">KOR</a></li>
+          </ul>
+      </div>
+      <div class="open"></div>
+      <a href="index.html" class="logo"></a>
+      <div class="menu">
+           <nav>
+               <ul class="gnb">
+                   <li class="item1"><a href="#">공단소개</a></li>
+                   <li class="item2"><a href="#">제도소개</a></li>
+                   <li class="item3"><a href="#">민원신청</a></li>
+                   <li class="item4"><a href="#">국민참여</a></li>
+                   <li class="item5"><a href="#">뉴스·소식</a></li>
+                   <li class="item6"><a href="#">정보공개</a></li>
+               </ul>
+           </nav>
+           <div class="close"></div>
+       </div>
+   </header>
+    <div class="page" id="page1">
+        <video id="video" preload="auto" autoplay="true" loop="loop" muted="muted" volume="0">
+            <source src="./image/play.mp4" type="video/mp4">
+        </video>
+    </div>
+    <div class="page" id="page2">
+        <div class="text_area">
+            <h3>노인장기요양보험</h3>
+            <p>고령이나 노인성질병 등으로 인하여 6개월 이상 동안 <br>혼자서 일상 생활을 수행하기 어려운 노인들께
+                신체활동 또는 가사지원 등의 <br>장기요양급여를 사회적 연대원리에 의해 제공하는 사회보험 제도입니다.</p>
+            <div class="more"><a href="" class="more_btn"></a></div>
+        </div>
+    </div>
+    <div class="page" id="page3">
+        <div class="text_area">
+            <h3>임신/출산/양육 지원</h3>
+            <p>2019년 달라진 지원! 임신 1회당 60만원의 진료비 지원!<br> 
+            임신부터 태아의 건강관리를 위해 주요 산전 진찰검사 보험 적용! <br>난임부부 보조생식술 급여 적용!</p>
+            <div class="more"><a href="" class="more_btn"></a></div>
+        </div>
+    </div>
+    <div class="page" id="page4">
+        <div class="text_area">
+            <h3>2019년 7월 16일 <br>외국인·재외국민 건강보험 당연가입 시행</h3>
+            <p>대한민국에서 6개월 이상 체류한 외국인 및 재외국민,<br>유학 또는 결혼·이민은 입국 즉시 가입!</p>
+            <div class="more"><a href="" class="more_btn"></a></div>
+        </div>
+    </div>
+    <footer class="ft">
+        <div class="f_nb">
+            <ul class="fnb">
+                <li class="item1"><a href="#">이용약관</a></li>
+                <li class="item2"><a href="#">홈페이지 개선의견</a></li>
+                <li class="item3"><a href="#">직원검색</a></li>
+                <li class="item4"><a href="#">보안프로그램 장애해결</a></li>
+                <li class="item5"><a href="#">영상정보처리기기 운영방침</a></li>
+                <li class="item6"><a href="#" class="last">개인정보 처리방침</a></li>
+            </ul>
+            <ul class="go">
+                <li class="item1"><a href="#" class="a1">1577-1000</a></li>
+                <li class="item2"><a href="#" class="a2">찾아오시는길</a></li>
+                <li class="item3"><a href="#" class="a3">온라인도우미</a></li>
+                <li class="item4"><a href="#" class="a4">M건강보험</a></li>
+            </ul>
+            <ul class="sns">
+                <li class="item1"><a href="#"><img src="./image/f_fb.gif" alt="페이스북"></a></li>
+                <li class="item2"><a href="#"><img src="./image/f_tw.gif" alt="트위터"></a></li>
+                <li class="item3"><a href="#"><img src="./image/f_blog.gif" alt="블로그"></a></li>
+            </ul>
+        </div>
+        <div class="copy">
+            <a href="#" class="f_logo"></a>
+            <p class="addr">본홈페이지에 게시된 이메일주소가 수집되는 것을 거부하며, 이를 위반시 정보통신망법에 의해 처벌됨을 유념하시기바랍니다.<br>
+            26464 강원도 원주시 건강로 32(반곡동)국민건강보험공단  <b>지사방문 : 09시 ~ 18시 (월~금)</b></p>
+            <p class="copyright">COPYRIGHT ⓒ 2019 BY NATIONAL HEALTH INSURANCE SERVICE ALL RIGHTS RESERVED.</p>
+        </div>
+    </footer>
+</body>
+</html>

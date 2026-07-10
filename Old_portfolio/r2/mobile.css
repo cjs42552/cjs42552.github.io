@@ -1,0 +1,45 @@
+@charset "utf-8";
+/* 모바일 */
+#gnb { position:fixed; z-index:90; width:100vw; height:100vh; 
+background-color:#fff; margin-top:0; left:-100%; transition:0.8s; } 
+#lst_ck:checked ~ #main #gnb { left:0; }
+#search_ck:checked ~ #main .search { right:0; }
+#gnb li { float:none; clear:both; padding:1em 2.4em;  }   
+#gnb li a { font-size:1.2em; color:#333; font-weight:bold; }
+#tnb { position:fixed; z-index:92; right:-105%; top:auto; bottom:42%; transition:0.8s;  }
+#lst_ck:checked ~ #main #tnb { right:5%; }
+#tnb li a { color:#333; }
+#tnb .search_btn {  background-position:-18px -24px;  }
+#main {background-image:url("./images/m_page1.jpg"); }
+.page .column li { clear:both; width:100%; height:48vh; }
+.page .pic { width:65%; height:auto; }
+.page_tit1 { padding-top:2em;  padding-left:30px; }    
+.page_tit2 { line-height:1.2;  padding-bottom:0.4em; padding-top:0.4em; 
+    padding-left:30px; font-size:1.8em; }      
+.page_com { padding-left:30px; font-size:1em; font-weight:400; } 
+.page_more { margin-top:20px; margin-left:20px; }  
+#page2.page .page_img2 { left:10%; top:5%; }
+.page_t1 { padding:1.6em; padding-top:7em; font-size:1.6em; line-height:1.4; } 
+.page_com1 { font-size:1.1em; }
+#page3 {width: 100%; height: 100vh;}    
+.page_t1 { padding-top:2em; font-size:1.6em; font-family: '나눔스퀘어', serif; } 
+.page_com1 { font-size:1em;}
+.sel{width: 49vw; height: 10vh; margin: 0 auto;}
+.textbox{width: 180px; height: 50%; margin-top: 2%; border: 2px solid #fff; color: #fff; font-size: 1.3em; text-align: center;margin-top: 20px;}
+.sel label{display: none;}
+.sel select{display: none;}
+.go{float: none}
+#page4 { height:150vh; }
+.lb_box { top:0; width:100%; }
+.pic_box { padding-left:0; width:100vw; padding-top:320px; }
+.pic_box li { float:none; clear:both; }    
+.pic_box li img { width:100%; margin-top:20px; } 
+#ra1:checked ~ .pic_box { margin-left:0px;  margin-top:0px; }         
+#ra2:checked ~ .pic_box { margin-left:0px; margin-top:-400px; }         
+#ra3:checked ~ .pic_box { margin-left:0px;  margin-top:-800px; }       
+#ra4:checked ~ .pic_box { margin-left:0px; margin-top:-1200px;}
+.copyright { font-size:0.85em; padding-left:20px; padding-top:50px; 
+margin-top: 50px; } 
+#fnb { padding-left:20px; }
+.mobile { display:block; }
+.desk { display:none; }

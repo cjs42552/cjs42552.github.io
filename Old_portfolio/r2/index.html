@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="font.css">
+    <link rel="stylesheet" href="reset.css">
+    <link href="https://fonts.googleapis.com/css?family=Noto+Serif+KR&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="common.css">
+    <title>t'way 티웨이 항공</title>
+    <style>
+    @keyframes pic_ani1 {
+        0% { opacity:0; }
+        100% { opacity:1; }
+    }    
+    .mobile { display:none; } 
+    </style>
+    <link rel="stylesheet" href="mobile.css" media="screen and (max-width:767px)">
+    <link rel="stylesheet" href="tablet.css" media="screen and (min-width:768px) and (max-width:1024px)">
+    <link rel="stylesheet" href="desktop.css" media="screen and (min-width:1025px)">
+    <script src="https://code.jquery.com/jquery-latest.js"></script>
+    <script src="main.js"></script>
+    <script>
+    $(document).ready(function(){
+        $(".to_top").fadeOut();
+        $(window).scroll(function(){
+            var sc_top = $(window).scrollTop(); 
+            if(sc_top>=300) {
+                $(".to_top").fadeIn();
+            } else {
+                $(".to_top").fadeOut();
+            }
+        });
+    });    
+    </script>
+</head>
+<body>
+    <input type="checkbox" class="ck_item" id="lst_ck">
+    <input type="checkbox" class="ck_item" id="search_ck">
+    <header class="page hd" id="main">
+        <a href="index.html" class="logo"></a>
+        <nav id="gnb">
+            <h3 class="mobile mob_title1">MENU</h3>
+            <ul class="mn">
+                <li class="item1"><a href="go.html">항공권 예매</a></li>
+                <li class="item2"><a href="my.html">나의 예약</a></li>
+                <li class="item3"><a href="service.html">서비스 안내</a></li>
+                <li class="item4"><a href="event.html">이벤트</a></li>
+                <li class="item5"><a href="qanda.html">고객센터</a></li>
+            </ul>
+            <label for="lst_ck" class="mobile close_btn"></label>
+        </nav>
+        <nav id="tnb">
+            <ul class="mn">
+                <li class="item1">
+                    <a href="" class="dp1">KO</a>
+                    <ul class="col_sub">
+                        <li class="it1"><a href="index.html">KO</a></li>
+                        <li class="it2"><a href="index_en.html">EN</a></li>
+                    </ul>
+                </li>
+                <li class="item2"><a href="product.html" class="search_btn"></a></li>
+            </ul>
+        </nav>
+        <ul class="vs_btn_box desk">
+            <li class="item1"><button class="on">01</button></li>
+            <li class="divider"></li>
+            <li class="item2"><button>02</button></li>
+        </ul>
+        <nav class="mobile search">
+            <h3 class="mob_title1">SEARCH</h3>
+            <form action="">
+                <input type="text" id="keywords" class="input_data">
+                <input type="submit" id="sub_btn" class="sub_btn">
+            </form>
+            <h4 class="mob_title2">주요 검색어</h4>
+            <ul class="mob_menu">
+                <li class="item1"><a href="">다낭</a></li>
+                <li class="item2"><a href="">세부</a></li>
+                <li class="item3"><a href="">보라카이</a></li>
+                <li class="item4"><a href="">제주도</a></li>
+                <li class="item5"><a href="">홍콩</a></li>
+            </ul>
+            <label for="search_ck" class="close_btn"></label>
+        </nav>
+        <label for="lst_ck" class="mobile lst_btn"></label>
+        <label for="search_ck" class="mobile search_btn"></label>
+    </header>
+    <div class="page" id="page1">
+        <ul class="column">
+            <li class="item1">
+                <img src="./images/section1_img1.png" alt="2페이지1" class="pic page_img1">
+                <img src="./images/section1_img2.jpg" alt="2페이지2" class="pic page_img2">
+                <img src="./images/section1_img3.jpg" alt="2페이지3" class="pic page_img3">
+            </li>
+            <li class="item2">
+                <h4 class="page_tit1">특별한 기내 서비스</h4>
+                <h2 class="page_tit2">t'way 항공만의<br> 특별한 기내 서비스</h2>
+                <p class="page_com">쿠폰, 면세품, 사전위탁 수하물 까지<br>다양한 서비스를 만나보세요</p>
+                <a href="service.html" class="page_more"></a>
+            </li>
+        </ul>
+    </div>
+    <div class="page" id="page2">
+        <ul class="column">
+            <li class="item1">
+                <h4 class="page_tit1">이벤트</h4>
+                <h2 class="page_tit2">도시락은 챙기셨나요?</h2>
+                <p class="page_com">와이파이 도시락과 함께하는 여행!
+                <br>어디서나 빵빵한 인터넷!<br>지금 티웨이에서 할인받아 가세요~!</p>
+                <a href="event.html" class="page_more"></a>
+            </li>
+            <li class="item2">
+                <img src="./images/section2_img1.png" alt="" class="pic page_img1">
+                <img src="./images/section2_img2.png" alt="" class="pic page_img2">
+            </li>
+        </ul>
+    </div>
+    <div class="page" id="page3">
+        <h3 class="page_t1">지금바로 항공권을 찾아보세요!</h3>
+        <p class="page_com1">어디든지 t'way 항공과 함께하면 즐겁습니다</p>
+        <div class="sel">
+            <input type="text" class="textbox" id="tbox1" placeholder="출발지">
+            <input type="text" class="textbox" id="tbox2" placeholder="도착지">
+            <input type="text" class="textbox" id="tbox3" placeholder="출발일">
+            <input type="text" class="textbox" id="tbox4" placeholder="도착일">
+            <label for="men">성인</label>
+            <select name="men" id="men">
+                <option value="">1</option>
+                <option value="">2</option>
+                <option value="">3</option>
+                <option value="">4</option>
+                <option value="">5</option>
+                <option value="">6</option>
+                <option value="">7</option>
+                <option value="">8</option>
+                <option value="">9</option>
+                <option value="">10</option>
+            </select>
+            <label for="so">소아</label>
+            <select name="so" id="so">
+                <option value="">1</option>
+                <option value="">2</option>
+                <option value="">3</option>
+                <option value="">4</option>
+                <option value="">5</option>
+                <option value="">6</option>
+                <option value="">7</option>
+                <option value="">8</option>
+                <option value="">9</option>
+                <option value="">10</option>
+            </select>
+            <label for="ua">유아</label>
+            <select name="ua" id="ua">
+                <option value="">1</option>
+                <option value="">2</option>
+                <option value="">3</option>
+                <option value="">4</option>
+                <option value="">5</option>
+                <option value="">6</option>
+                <option value="">7</option>
+                <option value="">8</option>
+                <option value="">9</option>
+                <option value="">10</option>
+            </select>
+            <div><a href="go.html" class="go">예매하기</a></div>
+        </div>
+    </div>
+    <div class="page" id="page4">
+        <div id="img_sl">
+        <input type="radio" class="ra_item" id="ra1" name="ra_item1" checked>
+        <input type="radio" class="ra_item" id="ra2" name="ra_item1">
+        <input type="radio" class="ra_item" id="ra3" name="ra_item1">
+        <input type="radio" class="ra_item" id="ra4" name="ra_item1">
+            <ul class="lb_box">
+                <li class="item1">
+                    <label for="ra1">김포 > 제주</label>
+                    <div class="item_box">
+                        <h2 class="item_tit">김포에서 제주로~</h2>
+                        <p class="item_com">우리나라의 제주를 
+                        아직도 못가봤다고??<br>
+                        그래서 t'way가 준비했어~!<br>
+                        편도 20,900원 부터~</p>
+                    </div>
+                </li>
+                <li class="item2">
+                    <label for="ra2">인천 > 나리타</label>
+                    <div class="item_box">
+                        <h2 class="item_tit">인천에서 나리타로~</h2>
+                        <p class="item_com">나리타로 미리 휴가를 떠나자!<br>
+                        일본 불교의 도시!<br>
+                        산의 풍경을 감상할수 있는 곳!<br>
+                        편도 48,000원 부터~</p>
+                    </div>
+                </li>
+                <li class="item3">
+                    <label for="ra3">인천 > 삿포로</label>
+                    <div class="item_box">
+                        <h2 class="item_tit">인천에서 삿포로!<br></h2>
+                        <p class="item_com">일본하면 도교, 오사카, 오키나와?<br>
+                        그 다음으로 유명한  삿포로는 어때?<br>
+                        편도 80,000원 부터~</p>
+                    </div>
+                </li>
+                <li class="item4">
+                    <label for="ra4">인천 > 다낭</label>
+                    <div class="item_box">
+                        <h2 class="item_tit">인천에서 다낭으로~!</h2>
+                        <p class="item_com">올여름 휴가는 다낭 어때?<br>
+                        호캉스 즐기기에도 딱~!!<br>
+                        시원한 바다에 풍덩~!<br>
+                        편도 96,100원 부터~</p>
+                    </div>
+                </li>
+            </ul>
+            <ul class="pic_box">
+                <li class="item1"><a href=""><img src="./images/pro01.png" alt="제주"></a></li>
+                <li class="item2"><a href=""><img src="./images/pro02.png" alt="나리타"></a></li>
+                <li class="item3"><a href=""><img src="./images/pro03.png" alt="삿포로"></a></li>
+                <li class="item4"><a href=""><img src="./images/pro04.png" alt="다낭"></a></li>
+                <li class="item1"><a href=""><img src="./images/pro01.png" alt="제주"></a></li>
+                <li class="item2"><a href=""><img src="./images/pro02.png" alt="나리타"></a></li>
+                <li class="item3"><a href=""><img src="./images/pro03.png" alt="삿포로"></a></li>
+            </ul>
+        </div>
+    </div>
+    <footer class="page" id="ft">
+        <nav id="fnb">
+            <ul class="mn">
+                <li class="item1"><a href="sitemap.html">SITEMAP</a></li>
+                <li class="item2"><a href="contact.html">CONTACT</a></li>
+            </ul>
+        </nav>
+        <nav class="mobile sns_link">
+            <ul class="sns">
+                <li class="item1"><a href=""></a></li>
+                <li class="item2"><a href=""></a></li>
+                <li class="item3"><a href=""></a></li>
+            </ul>
+        </nav>
+        <p class="copyright">
+            <span class="txt1">t'way Air</span>
+            <span class="txt1">대표이사: 정홍근</span>
+            <span class="txt1">주소 : 서울특별시 강서구 하늘길 210 국제화물청사 3층</span>
+            <span class="txt1">통신판매업신고번호. 2013-서울성동-0169</span>
+            <span class="txt1"> 개인정보 관리책임자. 경영본부장 김형이</span>
+            <span class="txt1">Copyright ⓒ 2019 T'way Air. All Rights Reserved.</span>
+        </p>
+    </footer>
+    <a href="#" class="to_top"></a>
+</body>
+</html>

@@ -1,0 +1,6 @@
+@charset "utf-8";
+/* 데스크탑 */
+#gnb { width:650px; height:50px; margin:0 auto;  margin-top:4.5%; 
+position:static; top:0; left:0; z-index:10; background-color:transparent; }
+.mobile { display:none; }
+.desk { display:block; }

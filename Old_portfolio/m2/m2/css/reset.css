@@ -1,0 +1,27 @@
+@charset "utf-8";
+html{height:100%;font-size:10px;/*width:device-width;*/min-width:320px}
+body,p,h1,h2,h3,h4,h5,ul,ol,li,dl,dt,dd,table,th,td,form,fieldset,legend,input,textarea,button,select{margin:0;padding:0}
+body,input,textarea,select,button,table,pre{font-family:'dotumM','Malgun Gothic','맑은 고딕',HelveticaNeue,AppleSDGothicNeo-Light,Arial,snas-serif;letter-spacing:-0.025em;line-height:1.5;font-weight:normal;/*font-size:1rem;color:#555;background:#fff*/;-webkit-text-size-adjust:none;-webkit-font-smoothing:antialiased}
+html,body{min-height:100%}
+body{color:#555;-webkit-overflow-scrolling:touch}
+img,fieldset,button,input,select,textarea{border:0 none;-moz-appearance:none;appearance:none;-webkit-appearance:none}
+ul,ol{list-style:none}
+img{max-width:100%}
+img,input,select,button{vertical-align:top;font-size:15px}
+input{border:0;background:#fff}
+em,address{font-style:normal}
+a{display:block;text-decoration:none;color:#555}
+button{margin:0;padding:0;background:none}
+h1,h2,h3,h4,h5,h6,strong,th,b{font-family:'dotumSB',HelveticaNeue,AppleSDGothicNeo,Arial,snas-serif;font-weight:normal}
+h1,h2,h3,h4,h5,h6,b{color:#111}
+table{border-collapse:collapse;border-spacing:0;width:100%;table-layout:fixed}
+td,th{border-collapse:collapse;border-spacing:0;word-wrap:break-word;word-break:break-all}
+caption{overflow:hidden;width:1px;height:1px;margin:-1px 0px;font-size:1px;line-height:0}
+hr,legend{display:none}
+label,button{cursor:pointer}
+textarea{overflow:hidden;overflow-y:auto;resize:none;border:0;background:none;word-break:break-all;word-wrap:break-word;white-space:pre-line;line-height:1.5;color:#111}
+input:-ms-input-placeholder,textarea:-ms-input-placeholder{font-weight:300;color:#999 !important}
+input::-webkit-input-placeholder,textarea::-webkit-input-placeholder{font-weight:300;color:#999}
+input, textarea, button {color:#555;box-sizing:border-box;-webkit-box-sizing:border-box;-ms-box-sizing:border-box;border-radius:0;}
+*{-webkit-box-sizing:border-box;box-sizing:border-box}
+iframe {border:0;}

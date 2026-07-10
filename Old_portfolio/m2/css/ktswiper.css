@@ -1,0 +1,333 @@
+@charset "utf-8";
+/* 
+    Version 1.0
+    The Copyrights & License is on kt Kim, which is made in 2019.
+    This template is designed for web designers and front-end developers.
+    The available range is limited to students attending ktKim's class.
+*/
+/* Slider */
+.ktswiper-slider
+{
+    position: relative;
+
+    display: block;
+    box-sizing: border-box;
+
+    -webkit-user-select: none;
+       -moz-user-select: none;
+        -ms-user-select: none;
+            user-select: none;
+
+    -webkit-touch-callout: none;
+    -khtml-user-select: none;
+    -ms-touch-action: pan-y;
+        touch-action: pan-y;
+    -webkit-tap-highlight-color: transparent;
+}
+
+.ktswiper-list
+{
+    position: relative;
+
+    display: block;
+    overflow: hidden;
+
+    margin: 0;
+    padding: 0;
+}
+.ktswiper-list:focus
+{
+    /*outline: none;*/
+}
+.ktswiper-list.dragging
+{
+    cursor: pointer;
+    cursor: hand;
+}
+
+.ktswiper-slider .ktswiper-track,
+.ktswiper-slider .ktswiper-list
+{
+    -webkit-transform: translate3d(0, 0, 0);
+       -moz-transform: translate3d(0, 0, 0);
+        -ms-transform: translate3d(0, 0, 0);
+         -o-transform: translate3d(0, 0, 0);
+            transform: translate3d(0, 0, 0);
+}
+
+.ktswiper-track
+{
+    position: relative;
+    top: 0;
+    left: 0;
+
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+.ktswiper-track:before,
+.ktswiper-track:after
+{
+    display: table;
+
+    content: '';
+}
+.ktswiper-track:after
+{
+    clear: both;
+}
+.ktswiper-loading .ktswiper-track
+{
+    visibility: hidden;
+}
+
+.ktswiper-slide
+{
+    display: none;
+    float: left;
+
+    height: 100%;
+    min-height: 1px;
+}
+[dir='rtl'] .ktswiper-slide
+{
+    float: right;
+}
+.ktswiper-slide img
+{
+    display: block;
+}
+.ktswiper-slide.ktswiper-loading img
+{
+    display: none;
+}
+.ktswiper-slide.dragging img
+{
+    pointer-events: none;
+}
+.ktswiper-initialized .ktswiper-slide
+{
+    display: block;
+}
+.ktswiper-loading .ktswiper-slide
+{
+    visibility: hidden;
+}
+.ktswiper-vertical .ktswiper-slide
+{
+    display: block;
+
+    height: auto;
+
+    border: 1px solid transparent;
+}
+.ktswiper-arrow.ktswiper-hidden {
+    display: none;
+}
+
+
+/*슬릭슬라이드 페이저, 버튼 스타일*/
+@charset 'UTF-8';
+/* Slider */
+.ktswiper-loading .ktswiper-list
+{
+    background: #fff url('../ajax-loader.gif') center center no-repeat;
+}
+
+/* Icons */
+@font-face
+{
+    font-family: 'slick';
+    font-weight: normal;
+    font-style: normal;
+
+    src: url('../fonts/ktswiper.eot');
+    src: url('../fonts/ktswiper.eot?#iefix') format('embedded-opentype'), url('../fonts/ktswiper.woff') format('woff'), url('../fonts/ktswiper.ttf') format('truetype'), url('../fonts/ktswiper.svg') format('svg');
+}
+/* Arrows */
+.ktswiper-prev,
+.ktswiper-next
+{
+    font-size: 0;
+    line-height: 0;
+
+    position: absolute;
+    top: 50%;
+
+    display: block;
+
+    width: 20px;
+    height: 20px;
+    padding: 0;
+    -webkit-transform: translate(0, -50%);
+    -ms-transform: translate(0, -50%);
+    transform: translate(0, -50%);
+
+    cursor: pointer;
+
+    color: transparent;
+    border: none;
+    /*outline: none;*/
+    background: transparent;
+}
+.ktswiper-prev:hover,
+.ktswiper-prev:focus,
+.ktswiper-next:hover,
+.ktswiper-next:focus
+{
+    color: transparent;
+    /*outline: none;*/
+    background: transparent;
+}
+.ktswiper-prev:hover:before,
+.ktswiper-prev:focus:before,
+.ktswiper-next:hover:before,
+.ktswiper-next:focus:before
+{
+    opacity: 1;
+}
+.ktswiper-prev.ktswiper-disabled:before,
+.ktswiper-next.ktswiper-disabled:before
+{
+    opacity: .25;
+}
+
+.ktswiper-prev:before,
+.ktswiper-next:before
+{
+    font-family: 'slick';
+    font-size: 20px;
+    line-height: 1;
+
+    opacity: .75;
+    color: white;
+
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.ktswiper-prev
+{
+    left: -25px;
+}
+[dir='rtl'] .ktswiper-prev
+{
+    right: -25px;
+    left: auto;
+}
+.ktswiper-prev:before
+{
+    content: '←';
+}
+[dir='rtl'] .ktswiper-prev:before
+{
+    content: '→';
+}
+
+.ktswiper-next
+{
+    right: -25px;
+}
+[dir='rtl'] .ktswiper-next
+{
+    right: auto;
+    left: -25px;
+}
+.ktswiper-next:before
+{
+    content: '→';
+}
+[dir='rtl'] .ktswiper-next:before
+{
+    content: '←';
+}
+
+/* Dots */
+.ktswiper-dotted.ktswiper-slider
+{
+    margin-bottom: 30px;
+}
+
+.ktswiper-dots
+{
+    position: absolute;
+    bottom: -25px;
+
+    display: block;
+
+    width: 100%;
+    padding: 0;
+    margin: 0;
+
+    list-style: none;
+
+    text-align: center;
+}
+.ktswiper-dots li
+{
+    position: relative;
+
+    display: inline-block;
+
+    width: 20px;
+    height: 20px;
+    margin: 0 5px;
+    padding: 0;
+
+    cursor: pointer;
+}
+.ktswiper-dots li button
+{
+    font-size: 0;
+    line-height: 0;
+
+    display: block;
+
+    width: 20px;
+    height: 20px;
+    padding: 5px;
+
+    cursor: pointer;
+
+    color: transparent;
+    border: 0;
+    /*outline: none;*/
+    background: transparent;
+}
+.ktswiper-dots li button:hover,
+.ktswiper-dots li button:focus
+{
+    /*outline: none;*/
+}
+.ktswiper-dots li button:hover:before,
+.ktswiper-dots li button:focus:before
+{
+    opacity: 1;
+}
+.ktswiper-dots li button:before
+{
+    font-family: 'slick';
+    font-size: 6px;
+    line-height: 20px;
+
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    width: 20px;
+    height: 20px;
+
+    content: '•';
+    text-align: center;
+
+    opacity: .25;
+    color: black;
+
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+.ktswiper-dots li.ktswiper-active button:before
+{
+    opacity: .75;
+    color: black;
+}

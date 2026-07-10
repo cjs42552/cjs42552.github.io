@@ -1,0 +1,29 @@
+@charset "utf-8";
+/* font setting */
+@font-face {
+    font-family: 'dotumM';
+    font-style: normal;
+    font-weight: normal;
+    src: url("../fonts/Arita-dotumM.woff") format("woff"), url("../fonts/Arita-dotumM.otf") format('opentype')
+}
+
+@font-face {
+    font-family: 'dotumSB';
+    font-style: normal;
+    font-weight: normal;
+    src: url("../fonts/Arita-dotumSB.woff") format("woff"), url("../fonts/Arita-dotumSB.otf") format('opentype')
+}
+
+@font-face {
+    font-family: 'buriM';
+    font-style: normal;
+    font-weight: normal;
+    src: url("../fonts/Arita-buriM.woff") format("woff"), url("../fonts/Arita-buriM.otf") format('opentype')
+}
+
+@font-face {
+    font-family: 'buriSB';
+    font-style: normal;
+    font-weight: normal;
+    src: url("../fonts/Arita-buriSB.woff") format("woff"), url("../fonts/Arita-buriSB.otf") format('opentype')
+}

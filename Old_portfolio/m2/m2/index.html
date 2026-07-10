@@ -1,0 +1,957 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>아모레퍼시픽 월드</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0,user-scalable=no">
+    <meta http-equiv="Expires" content="-1">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Cache-Control" content="No-Cache">
+    <!-- 모든 스마트기기의 메타포 아이콘 -->
+    <link rel="icon" href="./ico/favicon_32x32.ico" type="image/x-icon" />
+    <!-- 비ios 계열의 스마트폰의 바로가기 아이콘 -->
+    <link rel="shortcut icon" href="./ico/favicon_32x32.ico" type="image/x-icon" />
+    <!-- 고해상도 아이폰 메타포 아이콘 -->
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="./ico/icon_72x72.jpg" />
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="./ico/icon_114x114.jpg" />
+    <!-- 아이패드형 메타포 아이콘 -->
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="./ico/icon_144x144.jpg" />
+    <link rel="stylesheet" href="./css/font.css">
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="normalize.css">
+    <link rel="stylesheet" href="collapse.css">
+    <link rel="stylesheet" href="hd.css">
+    <style>
+     
+    /* main layout style -> main.css */    
+    #vs1 { width:100vw; height:100vh; overflow:hidden;  position:relative; } 
+    .img_box { width:400%; height:100%;  }   
+    .img_box li { float:left; width:25%; height:100%; position:relative; }  
+    .img_box .img_con { display:block; width:auto; height:100%; }   
+    .tit_box { position:absolute; top:25%; left:15%; width: 70%;
+    z-index:10; } 
+    .detail { display:block; position:absolute; bottom:35%; left:15%; z-index:11; width: 42px; height: 42px; background-image:url("./images/btn_play.png"); background-size:42px 42px; 
+        background-repeat: no-repeat; } 
+        
+    .btn_frame { position:absolute; bottom:20%; left:15%; z-index:20; width: 70%; }
+    .btn_box { position:relative; width:100%; height:16px; }  
+    .btn_box li { position:absolute; width:16px; height:16px; top:4px; }
+    .btn_box li button { display:block; width:8px; height:8px; border-radius:5px; border:1px solid #fff; background-color:transparent; }   
+    .btn_box li.on button { background-color:#fff; }
+    .btn_box li.item1 { left:0; }
+    .btn_box li.item2 { left:16px; }    
+    .btn_box li.item3 { left:32px; } 
+    div.play { left: 48px; top:2px; position:absolute; width: 16px; height: 16px; z-index:30; }    
+    div.play button { width: 16px; height:16px;  background-image:url("./images/btn_autostop.png"); background-position:center top; 
+        background-repeat:no-repeat; border:0; border-radius:0; }  
+    div.play.on button { background-position:center -37px; }
+        
+    #vs2 {  height:100%; padding-top: 10%; border-top:5px solid #666; } 
+    #vs2:before { content:"나눔 패스티벌"; display:block; width: 100%; clear:both; line-height: 36px; font-size:24px; text-align:center; padding-bottom:15px; } 
+    #vs2 li.slide_01 { float: left;   width: 100%;   }
+    #vs2 li div.slide_01_inner {  width: 100%;  }
+    #vs2 .img_wrap { width: 100%; }
+    #vs2 .img_wrap img { display: block;   width: 100%;  height: auto;  }
+    .p_index, .tit2 { font-size:1.8rem; margin:0; padding-left:5%; margin-top:0.5em;
+     color:#005295; }
+    .p_date, .tit3 { font-size:1.1rem; padding-left:5%; margin-top:1em; color:#333; } 
+    .p_date span { padding: 10px; }   
+    .p_tit { font-size:2.6rem; line-height:1.4; margin-top:0.5em; color:#555; padding-left:5%; }    
+    .p_text, .com2 { font-size:1.2rem; padding:5%; }  
+    .btn_more2_wrap, .more2 { padding-left:5%; line-height:1.6; font-size:1.4rem; font-weight:bold; display:block; }   
+    #page1 { width:100vw; height:100vh; clear:both; }
+    #page1 img { display:block; width: 100%; height: 100%; }
+        
+    #vs3 { width:100vw; height:115vh; position:relative; overflow:hidden; padding-top:30px; border-top:3px solid #666; border-bottom:3px solid #333; } .thum_box { width:700px; }
+    .thum_box li { float:left; margin:10px; width:110px; height:110px; border:3px solid #fff; }    
+    .thum_box li.item1.on { border:3px solid #e31f6e; }    
+    .thum_box li.item2.on { border:3px solid #6d1fe3; }   
+    .thum_box li.item3.on { border:3px solid #1f92e3; }    
+    .thum_box li.item4.on { border:3px solid #1fe35b; }  
+    .thum_box li.item5.on { border:3px solid #f4c44f; } 
+    .big_img_box { clear:both; width:500%; height:80%; }    
+    .big_img_box li { width:19%; margin-left:0.5%; margin-right: 0.5%; float:left; height: 100%; border:3px solid #333; } 
+/*
+    .big_img_box li.item1 { border:3px solid #e31f6e; }    
+    .big_img_box li.item2 { border:3px solid #6d1fe3; }   
+    .big_img_box li.item3 { border:3px solid #1f92e3; }    
+    .big_img_box li.item4 { border:3px solid #1fe35b; }  
+    .big_img_box li.item5 { border:3px solid #f4c44f; } 
+*/
+    .big_img_box li img { width:90%; height:auto; margin-left:5%; padding-top: 10px; } 
+    </style>
+    <script src="./js/jquery-latest.js"></script>
+    <script src="common.js"></script>
+    <script src="slider1.js"></script>
+    <link rel="stylesheet" href="./css/ktswiper.css">
+    <script src="./js/ktswiper.min.js"></script>
+    <script>
+    $(document).ready(function() {
+        $("#vs2").ktswiper({
+            infinite: true, //양방향 무한 모션
+            speed: 300, // 슬라이드 스피드
+            autoplay: true, //자동플레이 유무( false시 자동플레이 안됨 )
+            autoplaySpeed: 4000, // 자동플레이 스피드
+            slidesToShow: 1, //한 화면에 보여줄 아이템수
+            slidesToScroll: 1, // 한번에 슬라이드 시킬 아이템 개수
+            arrows: false //좌우 화살 버튼 노출 여부 ( false 시 안보임 )
+        });
+    });
+    </script>
+    <script src="slider2.js"></script>
+    <link rel="stylesheet" href="ft.css">
+</head>
+<body>
+<div class="collap">
+    <div class="c_logo">
+        <img src="./images/c_logo.png" alt="컬랩시블로고">
+    </div>
+    <div class="close"></div>
+    <nav class="gnb">
+        <ul class="menu">
+            <li class="item1"><a href="sub1.html">About Us</a></li>
+            <li class="item2"><a href="sub2.html">기업사회공헌</a></li>
+            <li class="item3"><a href="sub3.html">브랜드 사회공헌</a></li>
+            <li class="item4"><a href="sub4.html">Beauty Inside</a></li>
+            <li class="item5"><a href="sub5.html">Meet Us</a></li>
+        </ul>
+    </nav>
+</div>
+<div class="wrap">  
+   <header class="hd">
+       <div class="lst"></div>
+       <a href="index.html" class="logo"></a>
+   </header>
+   <div id="vs1">
+       <ul class="img_box">
+           <li class="item1">
+               <img src="./images/sec01_bg_m1.jpg" alt="뷰티인사이드" class="img_con">
+               <a href="sub1.html" class="detail"></a>
+           </li>
+           <li class="item2">
+               <img src="./images/sec01_bg_m2.jpg" alt="AMORE BEAUTIFUL WORLD" class="img_con">
+               <div class="tit_box">
+                   <img src="./images/vs_title2.png" alt="아모레뷰티월드">
+                </div>
+               <a href="sub2.html" class="detail"></a>
+           </li>
+           <li class="item3">
+               <img src="./images/sec01_bg_m3.jpg" alt="" class="img_con">
+               <div class="tit_box">
+                   <img src="./images/vs_title3.png" alt="20by20">
+                </div>
+               <a href="sub3.html" class="detail"></a>
+           </li>
+       </ul>
+       <div class="btn_frame">
+           <ul class="btn_box">
+               <li class="item1 on"><button></button></li>
+               <li class="item2"><button></button></li>
+               <li class="item3"><button></button></li>
+           </ul>
+           <div class="play"><button></button></div>
+       </div>
+   </div>
+   <ul class="ktswiper-track" id="vs2">
+        <li class="slide_01 ktswiper-slide ktswiper-cloned" data-ktswiper-index="0" aria-hidden="false" tabindex="-1" style="display:none;">
+            <div class="slide_01_inner">
+                <div class="img_wrap">
+                    <img src="./images/sec02_01.jpg" alt="UN총회, 뜨겁게 외치고 뜨겁게 움직이다. ">
+                </div>
+                <div class="txt_wrap">
+                    <p class="p_index" style="">Beauty Inside</p>
+                    <p class="p_date">기획저널 <span>|</span>Jan 2018</p>
+                    <p class="p_tit">뜨겁게 외치고 뜨겁게 움직이다. </p>
+                    <p class="p_text">
+                        UN 총회가 지루하다고? 뻔하지 않은, Fun한 Festival UN 총회 주간 핫한 Global Citizen의 모습까지 그 생생한 현장을 전합니다.
+                    </p>
+                    <div class="btn_more2_wrap">
+                        <a href="" class="btn_more2" target="_blank" title="뜨겁게 외치고 뜨겁게 움직이다. , 새 창에서 열기">더 보기 &gt;</a>
+                    </div>
+                </div>
+            </div>
+        </li>
+        <li class="slide_01 ktswiper-slide ktswiper-cloned" data-ktswiper-index="0" aria-hidden="true" tabindex="-1" style="display:none;">
+            <div class="slide_01_inner">
+                <div class="slide_videos">
+                    <a href="#" data-video-target="#" class="hover">
+                        <div class="img_wrap">
+                            <img src="./images/sec02_02.jpg" alt="A MORE Beautiful Day_2018<7월, 원피스 만들기>">
+                            <div class="minute">1:00</div>
+                            <div class="btn_play">
+                                <div class="dim"></div><img src="./images/icon_video_link.png" alt="A MORE Beautiful Day_2018<7월, 원피스 만들기> 동영상 재생">
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="txt_wrap">
+                    <p class="p_index" style="">Beauty Inside</p>
+                    <p class="p_date">임직원 나눔 <span>|</span>Jul 2018</p>
+                    <p class="p_tit">A MORE Beautiful Day_2018&lt;7월, 원피스 만들기&gt;</p>
+                    <p class="p_text">
+
+                    </p>
+                </div>
+            </div>
+        </li>
+        <li class="slide_01 ktswiper-slide" data-ktswiper-index="0" aria-hidden="true" tabindex="0">
+            <div class="slide_01_inner">
+                <div class="img_wrap">
+                    <img src="./images/sec02_03.jpg" alt="조금은 특별한 가족을 소개합니다. ">
+                </div>
+                <div class="txt_wrap">
+                    <p class="p_index" style="">Beauty Inside</p>
+                    <p class="p_date">CSR사례 <span>|</span>May 2019</p>
+                    <p class="p_tit">조금은 특별한 가족!</p>
+                    <p class="p_text">
+                        우리가 보편적으로 생각하는 일반적인 가족의 형태는 아니지만, 새로운 사랑의 울타리로 가족의 의미를 찾아가고 있는 조금은 특별한 가족들을 소개합니다.
+                    </p>
+                    <div class="btn_more2_wrap">
+                        <!-- 공통 페이지 .do 추후 추가 -->
+                        <a href="#" class="btn_more2" title="조금은 특별한 가족!">더 보기 &gt;</a>
+                    </div>
+                </div>
+            </div>
+        </li>
+        <li class="slide_01 ktswiper-slide" data-ktswiper-index="1" aria-hidden="true" tabindex="0">
+            <div class="slide_01_inner">
+                <div class="img_wrap">
+                    <img src="./images/sec02_04.jpg" alt="당당했던 그녀, 마르게리타 ">
+                </div>
+                <div class="txt_wrap">
+                    <p class="p_index">Beauty Inside</p>
+                    <p class="p_date">논문쉽게읽기 <span>|</span>Apr 2019</p>
+                    <p class="p_tit">당당했던 그녀, 마르게리타 </p>
+                    <p class="p_text">
+                        여성의 목소리를 당당하게 내기 어려웠던 중세 시대에 순종적인 여성상에서 벗어나 적극적인 삶을 살아간 한 여성이 있습니다. 그녀의 이름은 바로 '마르게리타'.
+                    </p>
+                    <div class="btn_more2_wrap">
+                        <!-- 공통 페이지 .do 추후 추가 -->
+                        <a href="#" class="btn_more2" title="당당했던 그녀, 마르게리타 ">더 보기 &gt;</a>
+                    </div>
+                </div>
+            </div>
+        </li>
+        <li class="slide_01 ktswiper-slide" data-ktswiper-index="2" aria-hidden="true" tabindex="0">
+            <div class="slide_01_inner">
+                <div class="img_wrap">
+                    <img src="./images/sec02_05.jpg" alt="재생공간에 다녀왔습니다 ">
+                </div>
+                <div class="txt_wrap">
+                    <p class="p_index">Beauty Inside</p>
+                    <p class="p_date">기획저널 <span>|</span>Apr 2019</p>
+                    <p class="p_tit">재생공간에 다녀왔습니다 </p>
+                    <p class="p_text">
+                        한번쯤은 꼭 가봐야 하는 곳으로 익히 알려진 트렌디한 곳 '재생공간'. 어쩌면 이미 철거되어 없어졌을지도 몰랐을 공간. 하지만 이제 과거와 현재를 잇는 곳으로 새롭게 탄생한 재생공간으로 직접 향해 봤다.
+                    </p>
+                    <div class="btn_more2_wrap">
+                        <a href="#" class="btn_more2" target="_blank" title="재생공간에 다녀왔습니다 , 새 창에서 열기">더 보기 &gt;</a>
+                    </div>
+                </div>
+            </div>
+        </li>
+        <li class="slide_01 ktswiper-slide" data-ktswiper-index="3" aria-hidden="true" tabindex="0">
+            <div class="slide_01_inner">
+                <div class="img_wrap">
+                    <img src="./images/sec02_06.jpg" alt="북한여성과 코스매틱 2탄 ">
+                </div>
+                <div class="txt_wrap">
+                    <p class="p_index">Beauty Inside</p>
+                    <p class="p_date">아시아의미 <span>|</span>Apr 2019</p>
+                    <p class="p_tit">북한여성과 코스매틱 2탄 </p>
+                    <p class="p_text">
+                        한국의 뷰티 영향도는 세계적 위상이 높습니다. 최근 북한까지 한국 화장품의 바람이 불고 있다고 합니다. 북한의 화장품 산업에 대해 알아보시죠!
+                    </p>
+                    <div class="btn_more2_wrap">
+                        <a href="#" class="btn_more2" title="북한여성과 코스매틱 2탄 ">더 보기 &gt;</a>
+                    </div>
+                </div>
+            </div>
+        </li>
+        <li class="slide_01 ktswiper-slide" data-ktswiper-index="4" aria-hidden="true" tabindex="0">
+            <div class="slide_01_inner">
+                <div class="img_wrap">
+                    <img src="./images/sec02_07.jpg" alt="SNS의 순기능! 착한 해시태그">
+                </div>
+                <div class="txt_wrap">
+                    <p class="p_index">Beauty Inside</p>
+                    <p class="p_date">CSR사례 <span>|</span>Apr 2019</p>
+                    <p class="p_tit">SNS의 순기능! 착한 해시태그</p>
+                    <p class="p_text">
+                        오늘날 우리와 떼려야 뗄 수 없는 SNS! '쓰레기 청소' 인증 운동과 페이스북의 '자살 방지 페이지'를 통해 SNS의 순기능을 만나보세요.
+                    </p>
+                    <div class="btn_more2_wrap">
+                        <a href="#" class="btn_more2" title="SNS의 순기능! 착한 해시태그">더 보기 &gt;</a>
+                    </div>
+                </div>
+            </div>
+        </li>
+        <li class="slide_01 ktswiper-slide" data-ktswiper-index="5" aria-hidden="true" tabindex="0">
+            <div class="slide_01_inner">
+                <div class="img_wrap">
+                    <img src="./images/sec02_08.jpg" alt="정리, 왜 해야하죠?">
+                </div>
+                <div class="txt_wrap">
+                    <p class="p_index">Beauty Inside</p>
+                    <p class="p_date">기획저널 <span>|</span>Apr 2019</p>
+                    <p class="p_tit">정리, 왜 해야하죠?</p>
+                    <p class="p_text">
+                        2019년 봄을 맞이하여 정리와 비움, 그리고 채움의 오묘한 경계에 있는 사람들을 위해 전한다. 미니멀리스트가 되고 싶지만, 여전히 맥시멀리스트인 당신을 위한 이야기
+                    </p>
+                    <div class="btn_more2_wrap">
+                        <a href="#" class="btn_more2" target="_blank" title="정리, 왜 해야하죠?, 새 창에서 열기">더 보기 &gt;</a>
+                    </div>
+                </div>
+            </div>
+        </li>
+        <li class="slide_01 ktswiper-slide" data-ktswiper-index="6" aria-hidden="true" tabindex="0">
+            <div class="slide_01_inner">
+                <div class="img_wrap">
+                    <img src="./images/sec02_09.jpg" alt="한,중,일 여성이 생각하는 모성">
+                </div>
+                <div class="txt_wrap">
+                    <p class="p_index">Beauty Inside</p>
+                    <p class="p_date">논문쉽게읽기 <span>|</span>Apr 2019</p>
+                    <p class="p_tit">한,중,일 여성이 생각하는 모성</p>
+                    <p class="p_text">
+                        모성애라는 명목아래 여성의 희생이 당연시 되었던 과거에도 당시 분위기와는 사뭇 다른 견해를 가지고 있던 여성들이 있었습니다. 과거의 세 여성들을 통해 모성애에 대한 생각을 만나보세요!
+                    </p>
+                    <div class="btn_more2_wrap">
+                        <a href="#" class="btn_more2" title="한,중,일 여성이 생각하는 모성">더 보기 &gt;</a>
+                    </div>
+                </div>
+            </div>
+        </li>
+        <li class="slide_01 ktswiper-slide" data-ktswiper-index="7" aria-hidden="true" tabindex="0">
+            <div class="slide_01_inner">
+                <div class="img_wrap">
+                    <img src="./images/sec02_10.jpg" alt="바비처럼 되고 싶어 ">
+                </div>
+                <div class="txt_wrap">
+                    <p class="p_index">Beauty Inside</p>
+                    <p class="p_date">CSR사례 <span>|</span>Mar 2019</p>
+                    <p class="p_tit">바비처럼 되고 싶어 </p>
+                    <p class="p_text">
+                        '바비 인형 같다' 라는 말에는 날씬한 몸매와 길고 빛나는 머릿결, 뚜렷한 이목구비를 가진 여성의 모습이 합축적으로 담겨있습니다. 그런데 현 시대의 바비인형은 어른들이 생각하는 그런 모습이 아닙니다.
+                    </p>
+                    <div class="btn_more2_wrap">
+                        <a href="#" class="btn_more2" title="바비처럼 되고 싶어 ">더 보기 &gt;</a>
+                    </div>
+                </div>
+            </div>
+        </li>
+        <li class="slide_01 ktswiper-slide" data-ktswiper-index="8" aria-hidden="true" tabindex="0">
+            <div class="slide_01_inner">
+                <div class="img_wrap">
+                    <img src="./images/sec02_11.jpg" alt="북한여성과 코스메틱 1탄 ">
+                </div>
+                <div class="txt_wrap">
+                    <p class="p_index">Beauty Inside</p>
+                    <p class="p_date">아시아의미 <span>|</span>Mar 2019</p>
+                    <p class="p_tit">북한여성과 코스메틱 1탄</p>
+                    <p class="p_text">
+                        오늘날의 북한에서 추구하는 아름다움이란 무엇일까요? 북한의 사회주의 속에서의 북한 여성의 삶과 미의 기준은 어떻게 다른지 알아보도록 하겠습니다.
+                    </p>
+                    <div class="btn_more2_wrap">
+                        <a href="#" class="btn_more2" title="북한여성과 코스메틱 1탄">더 보기 &gt;</a>
+                    </div>
+                </div>
+            </div>
+        </li>
+        <li class="slide_01 ktswiper-slide" data-ktswiper-index="9" aria-hidden="true" tabindex="0">
+            <div class="slide_01_inner">
+                <div class="img_wrap">
+                    <img src="./images/sec02_12.jpg" alt="퍼네이션 올라잇">
+                </div>
+                <div class="txt_wrap">
+                    <p class="p_index">Beauty Inside</p>
+                    <p class="p_date">CSR사례 <span>|</span>Feb 2019</p>
+                    <p class="p_tit">퍼네이션 올라잇!</p>
+                    <p class="p_text">
+                        기부하는 사람들에게 재미까지 선사하는 퍼네이션의 다양한 사례를 지금 바로 만나보세요
+                    </p>
+                    <div class="btn_more2_wrap">
+                        <a href="#" class="btn_more2" title="퍼네이션 올라잇!">더 보기 &gt;</a>
+                    </div>
+                </div>
+            </div>
+        </li>
+        <li class="slide_01 ktswiper-slide" data-ktswiper-index="10" aria-hidden="true" tabindex="0">
+            <div class="slide_01_inner">
+                <div class="img_wrap">
+                    <img src="./images/sec02_13.jpg" alt="인도 아름다움은 신과 같아 ">
+                </div>
+                <div class="txt_wrap">
+                    <p class="p_index">Beauty Inside</p>
+                    <p class="p_date">아시아의 미 <span>|</span>Jan 2019</p>
+                    <p class="p_tit">인도 아름다움은 신과 같아 </p>
+                    <p class="p_text">
+                        인도에서의 미의 기준을 이해하기 위해서는 그들의 종교 힌두교 문화를 먼저 알아야 합니다. 인도에서는 아름다움 = 진리= 절대신으로 통합니다.
+                    </p>
+                    <div class="btn_more2_wrap">
+                        <a href="#" class="btn_more2" title="인도 아름다움은 신과 같아 ">더 보기 &gt;</a>
+                    </div>
+                </div>
+            </div>
+        </li>
+        <li class="slide_01 ktswiper-slide" data-ktswiper-index="11" aria-hidden="true" tabindex="0">
+            <div class="slide_01_inner">
+                <div class="img_wrap">
+                    <img src="./images/sec02_14.jpg" alt="호랑이와 고래를 입양한 팬덤">
+                </div>
+                <div class="txt_wrap">
+                    <p class="p_index">Beauty Inside</p>
+                    <p class="p_date">CSR사례 <span>|</span>Jan 2019</p>
+                    <p class="p_tit">호랑이와 고래를 입양한 팬덤</p>
+                    <p class="p_text">
+                        연예인이 좋아하는 물건 등을 선물하는 1세대 팬들의 '조공문화'가 예전과는 다르게 확 바뀌었다는 사실을 다들 알고 계신가요?
+                    </p>
+                    <div class="btn_more2_wrap">
+                        <a href="#" class="btn_more2" title="호랑이와 고래를 입양한 팬덤">더 보기 &gt;</a>
+                    </div>
+                </div>
+            </div>
+        </li>
+        <li class="slide_01 ktswiper-slide" data-ktswiper-index="12" aria-hidden="true" tabindex="0">
+            <div class="slide_01_inner">
+                <div class="img_wrap">
+                    <img src="./images/sec02_15.jpg" alt="뷰티 인사이드 2018년 리뷰 ">
+                </div>
+                <div class="txt_wrap">
+                    <p class="p_index">Beauty Inside</p>
+                    <p class="p_date">기획저널 <span>|</span>Jan 2019</p>
+                    <p class="p_tit">뷰티 인사이드 2018년 리뷰 </p>
+                    <p class="p_text">
+                        2018년 뷰티 인사이드 기획 저널을 통해 어떻게 더 아름다운 세상을 만들어 갈 수 있을지에 대해 다양한 생각을 살펴보세요
+                    </p>
+                    <div class="btn_more2_wrap">
+                        <a href="#" class="btn_more2" target="_blank" title="뷰티 인사이드 2018년 리뷰 , 새 창에서 열기">더 보기 &gt;</a>
+                    </div>
+                </div>
+            </div>
+        </li>
+        <li class="slide_01 ktswiper-slide" data-ktswiper-index="13" aria-hidden="true" tabindex="0">
+            <div class="slide_01_inner">
+                <div class="img_wrap">
+                    <img src="./images/sec02_16.jpg" alt=" 세상을 바꾸는 디자인 ">
+                </div>
+                <div class="txt_wrap">
+                    <p class="p_index">Beauty Inside</p>
+                    <p class="p_date">CSR사례 <span>|</span>Jan 2019</p>
+                    <p class="p_tit"> 세상을 바꾸는 디자인 </p>
+                    <p class="p_text">
+                        어릴 때 사용하던 가구가 추억 속에 묻히지 않고 성인이 될 때 까지 사용할 수 있는 가구 브랜드 아카디아 디자인을 소개합니다.
+                    </p>
+                    <div class="btn_more2_wrap">
+                        <a href="#" class="btn_more2" title=" 세상을 바꾸는 디자인 ">더 보기 &gt;</a>
+                    </div>
+                </div>
+            </div>
+        </li>
+        <li class="slide_01 ktswiper-slide" data-ktswiper-index="14" aria-hidden="true" tabindex="0">
+            <div class="slide_01_inner">
+                <div class="img_wrap">
+                    <img src="./images/sec02_17.jpg" alt="암 환자분들을 응원하는 메이크업 유어 라이프 ">
+                </div>
+                <div class="txt_wrap">
+                    <p class="p_index">Beauty Inside</p>
+                    <p class="p_date">메이크업 유어 라이프 <span>|</span>Dec 2018</p>
+                    <p class="p_tit">암 환자분들을 응원합니다.</p>
+                    <p class="p_text">
+                        한국을 넘어 싱가포르, 대만, 홍콩, 중국, 베트남에서 펼쳐진 암 환자들에게 희망을 주는 '메이크업유어라이프' 를 지금 만나보세요.
+                    </p>
+                    <div class="btn_more2_wrap">
+                        <a href="#" class="btn_more2" title="암 환자분들을 응원합니다.">더 보기 &gt;</a>
+                    </div>
+                </div>
+            </div>
+        </li>
+        <li class="slide_01 ktswiper-slide" data-ktswiper-index="15" aria-hidden="true" tabindex="0">
+            <div class="slide_01_inner">
+                <div class="img_wrap">
+                    <img src="./images/sec02_18.jpg" alt="노년의 아름다움 ">
+                </div>
+                <div class="txt_wrap">
+                    <p class="p_index">Beauty Inside</p>
+                    <p class="p_date">기획저널 <span>|</span>Dec 2018</p>
+                    <p class="p_tit">진짜 아름다움을 찾아서 </p>
+                    <p class="p_text">
+                        시간을 되새김질하면서 발견하는 아름다움. 한 해 저물어가는 12월, 우리 삶 도처에 살아 숨쉬는 아름다움에 대해 이야기 해보고자 합니다.
+                    </p>
+                    <div class="btn_more2_wrap">
+                        <a href="#" class="btn_more2" title="진짜 아름다움을 찾아서 ">더 보기 &gt;</a>
+                    </div>
+                </div>
+            </div>
+        </li>
+        <li class="slide_01 ktswiper-slide" data-ktswiper-index="16" aria-hidden="true" tabindex="0">
+            <div class="slide_01_inner">
+                <div class="img_wrap">
+                    <img src="./images/sec02_19.jpg" alt="지구를 위해 잘 먹기로 했다 ">
+                </div>
+                <div class="txt_wrap">
+                    <p class="p_index">Beauty Inside</p>
+                    <p class="p_date">기획저널 <span>|</span>Dec 2018</p>
+                    <p class="p_tit">지구를 위해 잘 먹기로 했다 </p>
+                    <p class="p_text">
+                        2018 UN총회 주간 뉴욕 곳곳에서 포착한 지속 가능한 라이프스타일 솔루션! 마지막 ‘Eat’편을 지금 만나보세요.
+                    </p>
+                    <div class="btn_more2_wrap">
+                        <a href="#" class="btn_more2" target="_blank" title="지구를 위해 잘 먹기로 했다 , 새 창에서 열기">더 보기 &gt;</a>
+                    </div>
+                </div>
+            </div>
+        </li>
+        <li class="slide_01 ktswiper-slide" data-ktswiper-index="17" aria-hidden="true" tabindex="0">
+            <div class="slide_01_inner">
+                <div class="img_wrap">
+                    <img src="./images/sec02_20.jpg" alt="공간을 바라보는 시선 ">
+                </div>
+                <div class="txt_wrap">
+                    <p class="p_index">Beauty Inside</p>
+                    <p class="p_date">기획저널 <span>|</span>Dec 2018</p>
+                    <p class="p_tit">공간을 바라보는 시선 </p>
+                    <p class="p_text">
+                        2018 UN총회주간 두번째 이야기 'Place편'. UN총회주간동안 뉴욕 곳곳에서 발견한 지속 가능한 공간에 필요한 신기한 기술들을 소개합니다.
+                    </p>
+                    <div class="btn_more2_wrap">
+                        <a href="#" class="btn_more2" target="_blank" title="공간을 바라보는 시선 , 새 창에서 열기">더 보기 &gt;</a>
+                    </div>
+                </div>
+            </div>
+        </li>
+        <li class="slide_01 ktswiper-slide" data-ktswiper-index="18" aria-hidden="true" tabindex="0">
+            <div class="slide_01_inner">
+                <div class="img_wrap">
+                    <img src="./images/sec02_21.jpg" alt="패션 채식주의자 ">
+                </div>
+                <div class="txt_wrap">
+                    <p class="p_index">Beauty Inside</p>
+                    <p class="p_date">CSR사례 <span>|</span>Nov 2018</p>
+                    <p class="p_tit">패션 채식주의자 </p>
+                    <p class="p_text">
+                        겨울 옷 장만을 계획하고 계시다면 환경과 동물을 보호하는 '패션 채식주의자' 브랜드를 만나보세요.
+                    </p>
+                    <div class="btn_more2_wrap">
+                        <a href="#" class="btn_more2" title="패션 채식주의자 ">더 보기 &gt;</a>
+                    </div>
+                </div>
+            </div>
+        </li>
+        <li class="slide_01 ktswiper-slide" data-ktswiper-index="19" aria-hidden="true" tabindex="0">
+            <div class="slide_01_inner">
+                <div class="img_wrap">
+                    <img src="./images/sec02_22.jpg" alt="패션마케터가 바라 본 2018 UN총회주간 ">
+                </div>
+                <div class="txt_wrap">
+                    <p class="p_index">Beauty Inside</p>
+                    <p class="p_date">기획저널 <span>|</span>Nov 2018</p>
+                    <p class="p_tit">패션마케터가 바라 본 2018 UN총회주간 </p>
+                    <p class="p_text">
+                        2018 UN총회주간 뉴욕 곳곳에서 포착한 지속 가능한 라이프스타일 솔루션! 우리 삶을 이루고 있는 의, 식, 주 중 첫번째 패션편을 만나보세요.
+                    </p>
+                    <div class="btn_more2_wrap">
+                        <a href="#" class="btn_more2" target="_blank" title="패션마케터가 바라 본 2018 UN총회주간 , 새 창에서 열기">더 보기 &gt;</a>
+                    </div>
+                </div>
+            </div>
+        </li>
+        <li class="slide_01 ktswiper-slide" data-ktswiper-index="20" aria-hidden="true" tabindex="0">
+            <div class="slide_01_inner">
+                <div class="img_wrap">
+                    <img src="./images/sec02_23.jpg" alt="고독한 시간, 감각을 깨우는 사람 ">
+                </div>
+                <div class="txt_wrap">
+                    <p class="p_index">Beauty Inside</p>
+                    <p class="p_date">아시아의 미 <span>|</span>Nov 2018</p>
+                    <p class="p_tit">고독한 시간, 감각을 깨우는 사람 </p>
+                    <p class="p_text">
+                        우리의 선조들을 비롯한 동아시아 사회의 성인들을 통해 현대인에게 필요한 고독의 참된 의미를 알아보겠습니다.
+                    </p>
+                    <div class="btn_more2_wrap">
+                        <a href="#" class="btn_more2" title="고독한 시간, 감각을 깨우는 사람 ">더 보기 &gt;</a>
+                    </div>
+                </div>
+            </div>
+        </li>
+        <li class="slide_01 ktswiper-slide" data-ktswiper-index="21" aria-hidden="true" tabindex="0">
+            <div class="slide_01_inner">
+                <div class="img_wrap">
+                    <img src="./images/sec02_24.jpg" alt="그린걸스, 네 꿈을 펼쳐라!">
+                </div>
+                <div class="txt_wrap">
+                    <p class="p_index">Beauty Inside</p>
+                    <p class="p_date">CSR사례 <span>|</span>Nov 2018</p>
+                    <p class="p_tit">그린걸스,네 꿈을 펼쳐라!</p>
+                    <p class="p_text">
+                        방과 후 야외 모험을 떠나는 10대 소녀들! 그린걸스(Green Girls)를 지금 바로 만나보세요!
+                    </p>
+                    <div class="btn_more2_wrap">
+                        <a href="/beautyInside/beautyInside_detail_view.do?i_sBeautyInsideCd=CBI20181106000000001" class="btn_more2" title="그린걸스,네 꿈을 펼쳐라!">더 보기 &gt;</a>
+                    </div>
+                </div>
+            </div>
+        </li>
+        <li class="slide_01 ktswiper-slide" data-ktswiper-index="22" aria-hidden="true" tabindex="0">
+            <div class="slide_01_inner">
+                <div class="img_wrap">
+                    <img src="./images/sec02_25.jpg" alt="달릴 준비는 되어있다. ">
+                </div>
+                <div class="txt_wrap">
+                    <p class="p_index">Beauty Inside</p>
+                    <p class="p_date">핑크리본 캠페인 <span>|</span>Oct 2018</p>
+                    <p class="p_tit">달릴 준비는 되어있다. </p>
+                    <p class="p_text">
+                        달리면 자신의 건강은 물론 다른 이의 건강까지 지킬 수 있는 프로그램을 알고 계신가요? 이 사실을 알고 계시다면, 당신은 이미 달릴 준비가 되어있습니다.
+                    </p>
+                    <div class="btn_more2_wrap">
+                        <a href="#" class="btn_more2" title="달릴 준비는 되어있다. ">더 보기 &gt;</a>
+                    </div>
+                </div>
+            </div>
+        </li>
+        <li class="slide_01 ktswiper-slide" data-ktswiper-index="23" aria-hidden="true" tabindex="0">
+            <div class="slide_01_inner">
+                <div class="img_wrap">
+                    <img src="./images/sec02_26.jpg" alt="2030세대에 UN에 주목하는 이유는?!">
+                </div>
+                <div class="txt_wrap">
+                    <p class="p_index">Beauty Inside</p>
+                    <p class="p_date">기획저널 <span>|</span>Oct 2018</p>
+                    <p class="p_tit">UN이 2030세대에 주목한 이유!</p>
+                    <p class="p_text">
+                        이번 UN총회 주간은 그 어느때 보다도 다양한 이슈로 젊은 층이 주도적으로 목소리를 내는 행사가 많았다. 그들만의 방식으로 전달했던 세상을 바꾸기 위한 목소리를 들어보자!
+                    </p>
+                    <div class="btn_more2_wrap">
+                        <a href="#" class="btn_more2" target="_blank" title="UN이 2030세대에 주목한 이유!, 새 창에서 열기">더 보기 &gt;</a>
+                    </div>
+                </div>
+            </div>
+        </li>
+        <li class="slide_01 ktswiper-slide" data-ktswiper-index="24" aria-hidden="true" tabindex="0">
+            <div class="slide_01_inner">
+                <div class="img_wrap">
+                    <img src="./images/sec02_27.jpg" alt="조선시대 여성들의 유머 담화와 웃음">
+                </div>
+                <div class="txt_wrap">
+                    <p class="p_index">Beauty Inside</p>
+                    <p class="p_date">논문쉽게읽기 <span>|</span>Oct 2018</p>
+                    <p class="p_tit">조선시대 여성들의 유머 </p>
+                    <p class="p_text">
+                        여성의 희로애락의 표현조차 부덕에 어긋난다고 가르쳤던 조선시대. 그러나 현실에서 조선시대 여성들은 우스갯소리와 유머를 나누었다는 사실!!!
+                    </p>
+                    <div class="btn_more2_wrap">
+                        <a href="#" class="btn_more2" title="조선시대 여성들의 유머 ">더 보기 &gt;</a>
+                    </div>
+                </div>
+            </div>
+        </li>
+        <li class="slide_01 ktswiper-slide" data-ktswiper-index="25" aria-hidden="true" tabindex="0">
+            <div class="slide_01_inner">
+                <div class="img_wrap">
+                    <img src="./images/sec02_28.jpg" alt="노임팩트존">
+                </div>
+                <div class="txt_wrap">
+                    <p class="p_index">Beauty Inside</p>
+                    <p class="p_date">기획저널 <span>|</span>Sep 2018</p>
+                    <p class="p_tit">NO IMPACT ZONE</p>
+                    <p class="p_text">
+                        일상의 당연함을 흔드는 곳! 당연시 여겼던 일상에 대한 생각을 흔들 수 있는 곳, 친환경적 소비의 즐거움이 있는 노 임팩트 존으로 여러분을 안내 합니다.
+                    </p>
+                    <div class="btn_more2_wrap">
+                        <a href="#" class="btn_more2" target="_blank" title="NO IMPACT ZONE, 새 창에서 열기">더 보기 &gt;</a>
+                    </div>
+                </div>
+            </div>
+        </li>
+        <li class="slide_01 ktswiper-slide" data-ktswiper-index="26" aria-hidden="true" tabindex="0">
+            <div class="slide_01_inner">
+                <div class="img_wrap">
+                    <img src="./images/sec02_29.jpg" alt="서울에서 지방 출신 여대생으로 살아 남기 ">
+                </div>
+                <div class="txt_wrap">
+                    <p class="p_index">Beauty Inside</p>
+                    <p class="p_date">논문쉽게읽기 <span>|</span>Sep 2018</p>
+                    <p class="p_tit">논문쉽게읽기</p>
+                    <p class="p_text">
+                        오늘날 지방출신 여대생들의 서울 상경은 어떤 의미를 지니고 있을까요? 이들을 통해 한국사회의 평범한 여성 청년들의 삶을 고찰할 수 있습니다.
+                    </p>
+                    <div class="btn_more2_wrap">
+                        <a href="#" class="btn_more2" title="논문쉽게읽기">더 보기 &gt;</a>
+                    </div>
+                </div>
+            </div>
+        </li>
+        <li class="slide_01 ktswiper-slide" data-ktswiper-index="27" aria-hidden="true" tabindex="0">
+            <div class="slide_01_inner">
+                <div class="img_wrap">
+                    <img src="./images/sec02_30.jpg" alt="당신의 직업은 회사원 입니까? ">
+                </div>
+                <div class="txt_wrap">
+                    <p class="p_index">Beauty Inside</p>
+                    <p class="p_date">기획저널 <span>|</span>Aug 2018</p>
+                    <p class="p_tit">당신의 직업은 회사원입니까?</p>
+                    <p class="p_text">
+                        끝없는 배움을 향한 열정을 바탕으로 내가 할 수 있는 최고의 일이 아니라 다른 사람들의 시선과 일반적인 사회적 기준에 맞추지는 않았나요?
+                    </p>
+                    <div class="btn_more2_wrap">
+                        <a href="#" class="btn_more2" target="_blank" title="당신의 직업은 회사원입니까?, 새 창에서 열기">더 보기 &gt;</a>
+                    </div>
+                </div>
+            </div>
+        </li>
+        <li class="slide_01 ktswiper-slide" data-ktswiper-index="28" aria-hidden="true" tabindex="0">
+            <div class="slide_01_inner">
+                <div class="img_wrap">
+                    <img src="./images/sec02_31.jpg" alt="역사 속 진짜 주인공 이었던 그녀들!">
+                </div>
+                <div class="txt_wrap">
+                    <p class="p_index">Beauty Inside</p>
+                    <p class="p_date">CSR사례 <span>|</span>Sep 2018</p>
+                    <p class="p_tit">역사 속 진짜 주인공 이었던 그녀들!</p>
+                    <p class="p_text">
+                        빛을 받지 못한 역사의 페이지 속 3명의 여성들을 기발한 방법으로 주목시킨 독일의 필기구 브랜드 스타빌로 보스(Stabilo Boss)의 광고를 소개합니다.
+                    </p>
+                    <div class="btn_more2_wrap">
+                        <a href="#" class="btn_more2" title="역사 속 진짜 주인공 이었던 그녀들!">더 보기 &gt;</a>
+                    </div>
+                </div>
+            </div>
+        </li>
+        <li class="slide_01 ktswiper-slide" data-ktswiper-index="29" aria-hidden="true" tabindex="0">
+            <div class="slide_01_inner">
+                <div class="img_wrap">
+                    <img src="./images/sec02_32.jpg" alt="로봇 엔지니어 바비 인형 ">
+                </div>
+                <div class="txt_wrap">
+                    <p class="p_index">Beauty Inside</p>
+                    <p class="p_date">CSR사례 <span>|</span>Aug 2018</p>
+                    <p class="p_tit">넌 무엇이든 될 수 있어 </p>
+                    <p class="p_text">
+                        여기 인종과 성별을 뛰어넘어 다양한 모습을 소개하는 '롤모델 전도사 바비인형'을 소개합니다.
+                    </p>
+                    <div class="btn_more2_wrap">
+                        <a href="#" class="btn_more2" title="넌 무엇이든 될 수 있어 ">더 보기 &gt;</a>
+                    </div>
+                </div>
+            </div>
+        </li>
+        <li class="slide_01 ktswiper-slide" data-ktswiper-index="30" aria-hidden="true" tabindex="0">
+            <div class="slide_01_inner">
+                <div class="img_wrap">
+                    <img src="./images/sec02_33.jpg" alt="먹고 기억하고 움직여라 ">
+                </div>
+                <div class="txt_wrap">
+                    <p class="p_index">Beauty Inside</p>
+                    <p class="p_date">핑크리본 캠페인 <span>|</span>Aug 2018</p>
+                    <p class="p_tit">먹고 기억하고 움직여라 </p>
+                    <p class="p_text">
+                        삶의 행복을 위해서는 건강이 밑받침되어야 합니다. 여성들의 건강하고 행복한 삶을 위한, 유방암 예방을 위한 건강정보를 알려드립니다.
+                    </p>
+                    <div class="btn_more2_wrap">
+                        <a href="#" class="btn_more2" title="먹고 기억하고 움직여라 ">더 보기 &gt;</a>
+                    </div>
+                </div>
+            </div>
+        </li>
+        <li class="slide_01 ktswiper-slide" data-ktswiper-index="31" aria-hidden="true" tabindex="0">
+            <div class="slide_01_inner">
+                <div class="img_wrap">
+                    <img src="./images/sec02_34.jpg" alt="영감을 얻는 제주여행">
+                </div>
+                <div class="txt_wrap">
+                    <p class="p_index">Beauty Inside</p>
+                    <p class="p_date">기획저널 <span>|</span>Jul 2018</p>
+                    <p class="p_tit">영감을 얻는 제주여행</p>
+                    <p class="p_text">
+                        있는 그대로의 제주가 보이는 그 순간, 그때부터가 진짜 여행의 시작이라는 걸 알았다. 타인의 기준에 맞춰진 제주가 아닌 나만의 제주를 찾기 위해 떠나는 여행.
+                    </p>
+                    <div class="btn_more2_wrap">
+                        <a href="#" class="btn_more2" target="_blank" title="영감을 얻는 제주여행, 새 창에서 열기">더 보기 &gt;</a>
+                    </div>
+                </div>
+            </div>
+        </li>
+        <li class="slide_01 ktswiper-slide" data-ktswiper-index="32" aria-hidden="true" tabindex="0">
+            <div class="slide_01_inner">
+                <div class="img_wrap">
+                    <img src="./images/sec02_35.jpg" alt="희망가게 전수 창업 프로젝트 ">
+                </div>
+                <div class="txt_wrap">
+                    <p class="p_index">Beauty Inside</p>
+                    <p class="p_date">희망가게 <span>|</span>Aug 2018</p>
+                    <p class="p_tit">희망가게 전수 창업 프로젝트 </p>
+                    <p class="p_text">
+                        창업은 충분한 정보 수집과 노력 지원이 필요합니다. 여기 성공적인 창업을 위해 희망 노하우를 전수하는 다양한 프로그램을 소개합니다.
+                    </p>
+                    <div class="btn_more2_wrap">
+                        <a href="#" class="btn_more2" title="희망가게 전수 창업 프로젝트 ">더 보기 &gt;</a>
+                    </div>
+                </div>
+            </div>
+        </li>
+        <li class="slide_01 ktswiper-slide" data-ktswiper-index="33" aria-hidden="true" tabindex="0">
+            <div class="slide_01_inner">
+                <div class="img_wrap">
+                    <img src="./images/sec02_36.jpg" alt="녹차의 맛을 탐하다 ">
+                </div>
+                <div class="txt_wrap">
+                    <p class="p_index">Beauty Inside</p>
+                    <p class="p_date">아시아의 미 <span>|</span>Aug 2018</p>
+                    <p class="p_tit">녹차의 맛을 탐하다 </p>
+                    <p class="p_text">
+                        우리는 커피공화국이라는 말 처럼 다양하게 커피를 즐기는 법을 공유하고 있습니다. 하지만 여러분들은 진짜 녹차를 제대로 마시는 법에 대해 알고 있나요?
+                    </p>
+                    <div class="btn_more2_wrap">
+                        <a href="#" class="btn_more2" title="녹차의 맛을 탐하다 ">더 보기 &gt;</a>
+                    </div>
+                </div>
+            </div>
+        </li>
+        <li class="slide_01 ktswiper-slide" data-ktswiper-index="34" aria-hidden="true" tabindex="0">
+            <div class="slide_01_inner">
+                <div class="img_wrap">
+                    <img src="./images/sec02_37.jpg" alt="멍 아일랜드를 아시나요?">
+                </div>
+                <div class="txt_wrap">
+                    <p class="p_index" style="">Beauty Inside</p>
+                    <p class="p_date">CSR사례 <span>|</span>Jul 2018</p>
+                    <p class="p_tit">멍 아일랜드를 아시나요?</p>
+                    <p class="p_text">
+                        유기견 문제는 제주 섬 뿐만 아닌 세계 여러 섬에서도 발생하고 있습니다. 여기 특별하고 획기적인 하와이 카우아이 섬의 유기견 입양 시스템을 소개 합니다.
+                    </p>
+                    <div class="btn_more2_wrap">
+                        <a href="#" class="btn_more2" title="멍 아일랜드를 아시나요?">더 보기 &gt;</a>
+                    </div>
+                </div>
+            </div>
+        </li>
+        <li class="slide_01 ktswiper-slide" data-ktswiper-index="35" aria-hidden="true" tabindex="0">
+            <div class="slide_01_inner">
+                <div class="img_wrap">
+                    <img src="./images/sec02_38.jpg" alt="당신이 몰랐던 여행의 새로운 가치 ">
+                </div>
+                <div class="txt_wrap">
+                    <p class="p_index" style="">Beauty Inside</p>
+                    <p class="p_date">CSR사례 <span>|</span>Jul 2018</p>
+                    <p class="p_tit">당신이 몰랐던 여행의 가치 </p>
+                    <p class="p_text">
+                        현지인과 여행객 모두가 행복해질 수 있는 공정여행(착한 여행)을 소개합니다.
+                    </p>
+                    <div class="btn_more2_wrap">
+                        <a href="#" class="btn_more2" title="당신이 몰랐던 여행의 가치 ">더 보기 &gt;</a>
+                    </div>
+                </div>
+            </div>
+        </li>
+        <li class="slide_01 ktswiper-slide ktswiper-current ktswiper-active ktswiper-center" data-ktswiper-index="36" aria-hidden="false" tabindex="0">
+            <div class="slide_01_inner">
+                <div class="img_wrap">
+                    <img src="./images/sec02_39.jpg" alt="어제보다 오늘 더 아름다운 세상">
+                </div>
+                <div class="txt_wrap">
+                    <p class="p_index" style="">Beauty Inside</p>
+                    <p class="p_date">뷰티 인사이드 소개 <span>|</span>Jul 2018</p>
+                    <p class="p_tit">어제보다 오늘 더 아름다운 세상</p>
+                    <p class="p_text">
+                        상반기에 진행되었던 뷰티 인사이드 저널과 ABD를 지금 바로 만나보세요!
+                    </p>
+                    <div class="btn_more2_wrap">
+                        <a href="#" class="btn_more2" target="_blank" title="어제보다 오늘 더 아름다운 세상, 새 창에서 열기">더 보기 &gt;</a>
+                    </div>
+                </div>
+            </div>
+        </li>
+        <li class="slide_01 ktswiper-slide" data-ktswiper-index="37" aria-hidden="true" tabindex="0">
+            <div class="slide_01_inner">
+                <div class="img_wrap">
+                    <img src="./images/sec02_40.jpg" alt="오늘 아침에도 입을 옷이 없었던 당신을 위해서 ">
+                </div>
+                <div class="txt_wrap">
+                    <p class="p_index" style="">Beauty Inside</p>
+                    <p class="p_date">기획저널 <span>|</span>Jun 2018</p>
+                    <p class="p_tit">지금 당신은 무엇을 입고 있는가?</p>
+                    <p class="p_text">
+                        옷의 가치를 안다는 건 자신의 가치를 아는 것과도 같다. 가치를 깨닫게 되면 자연스레 철학이 따른다.
+                    </p>
+                    <div class="btn_more2_wrap">
+                        <a href="#" class="btn_more2" title="지금 당신은 무엇을 입고 있는가?">더 보기 &gt;</a>
+                    </div>
+                </div>
+            </div>
+        </li>
+    </ul>
+   <div id="page1">
+        <img src="./images/page1.png" alt="페이지 전면 이미지">
+   </div>
+   <div id="vs3">
+       <ul class="thum_box">
+           <li class="item1 on"><img src="./images/thum01.jpg" alt="메이크업 유어 라이프 썸네일 이미지" class="thumbnail"></li>
+           <li class="item2"><img src="./images/thum02.jpg" alt="핑크리본 캠페인 썸네일 이미지" class="thumbnail"></li>
+           <li class="item3"><img src="./images/thum03.jpg" alt="희망가게 썸네일 이미지" class="thumbnail"></li>
+           <li class="item4"><img src="./images/thum04.jpg" alt="설화수 썸네일 이미지" class="thumbnail"></li>
+           <li class="item5"><img src="./images/thum05.jpg" alt="이니스프리 썸네일 이미지" class="thumbnail"></li>
+       </ul>
+       <ul class="big_img_box">
+           <li class="item1">
+               <img src="./images/big_img01.jpg" alt="메이크업 유어 라이프">
+               <h4 class="tit2">Our Activities</h4>
+               <h3 class="tit3">메이크업 유어 라이프</h3>
+               <p class="com2">암 치료 과정에서 갑작스러운 외모 변화로 힘들어하는 환자들을 위해 메이크업 및 피부관리 등 스스로를 아름답게 가꿀 수 있는 노하우를 전하는 캠페인입니다. 아모레 카운셀러 봉사단의 뷰티 노하우로 일상으로 빠르게 복귀할 수 있도록 지원하고자 합니다.</p>
+               <a href="" class="more2"></a>
+           </li>
+           <li class="item2">
+               <img src="./images/big_img02.jpg" alt="핑크리본 캠페인">
+               <h4 class="tit2">Our Activities</h4>
+               <h3 class="tit3">핑크리본 캠페인</h3>
+               <p class="com2">여성이 자신의 몸에 대한 관심을 가지고, 건강한 삶을 살 수 있도록 지원하는 캠페인 입니다. 특히 유방 건강 관리의 중요성을 알리기 위해 유방암 자가 검진 교육 '핑크투어', 유방암 조기 발견의 중요성을 알리는 러닝 페스티벌 '핑크런'을 함께 진행하고 있습니다.</p>
+               <a href="" class="more2"></a>
+           </li>
+           <li class="item3">
+               <img src="./images/big_img03.jpg" alt="희망가게">
+               <h4 class="tit2">Our Activities</h4>
+               <h3 class="tit3">희망가게</h3>
+               <p class="com2">한부모 여성의 자립을 위한 창업대출지원 사업으로서 경제적, 사회적 자립을 지원하고 있습니다. 4천 만원까지 보증 없이 신용대출(마이크로크레딧)을 지원하고, 상환금은 ‘희망의 씨앗 자금’으로 쌓여 창업을 준비하는 또 다른 한부모 여성에게 기회가 돌아갈 수 있게 합니다.</p>
+               <a href="" class="more2"></a>
+           </li>
+           <li class="item4">
+               <img src="./images/big_img04.jpg" alt="설화수">
+               <h4 class="tit2">Our Activities</h4>
+               <h3 class="tit3">설화수  Beauty from  Your Culture</h3>
+               <p class="com2">설화문화전을 전신으로 하여 2017년 탄생한 설화수의 글로벌 사회공헌 캠페인 Beauty from Your Culture는 한국을 넘어 아시아 지역의 전통문화 보전과 계승에 기여하고, 설화문화전을 통해 지난 10여년간 이어온 문화메세나 활동을 해외로 확장시키기 위한 활동입니다.</p>
+               <a href="" class="more2"></a>
+           </li>
+           <li class="item5">
+               <img src="./images/big_img05.jpg" alt="이니스프리">
+               <h4 class="tit2">Our Activities</h4>
+               <h3 class="tit3">이니스프리  PLAYGREEN</h3>
+               <p class="com2">그린라이프는 결코 어렵고 지루한 것이 아닌 놀이가 될 수 있다는 생각! 이니스프리의 플레이그린(PLAYGREEN) 입니다. 365일 일상에서 놀이처럼 즐기는 지구를 위한 모든 활동이 플레이그린에 포함됩니다. 에코손수건과 공병 캠페인처럼 일상에서 놀이처럼 즐기는 활동으로 지구를 지키는데 동참하세요!</p>
+               <a href="" class="more2"></a>
+           </li>
+       </ul>
+   </div>
+    <footer class="ft">
+        <nav class="fnb">
+            <ul class="left">
+                <li class="item1"><a href="">Meet Us</a></li>
+                <li class="item2"><a href="">뉴스레터 구독</a></li>
+            </ul>
+            <ul class="right">
+                <li class="item1"><a href=""></a></li>
+                <li class="item2"><a href=""></a></li>
+                <li class="item3"><a href=""></a></li>
+            </ul>
+        </nav>
+        <ul class="linkbox">
+            <li class="item1"><a href="">개인정보처리방침</a></li>
+            <li class="item2"><a href="">임직원 포털</a></li>
+        </ul>
+        <address class="addr">서울 용산구 한강대로 100 아모레퍼시픽</address>
+        <p class="copyright">&copy; AMOREPACIFIC Corporation. All Rights Reserved.</p>
+        <img src="./images/footer_logo.png" alt="푸터로고" class="ft_logo">
+    </footer>
+    <a href="#" class="to_top"></a>
+</div>     
+</body>
+</html>

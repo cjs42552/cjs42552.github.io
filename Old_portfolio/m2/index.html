@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CHANEL KOREA</title>
+    <meta http-equiv="X-UA_conpatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta http-equiv="Expires" content="-1">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Cache-Control" content="No-Cache">
+    <link rel="icon" href="./image/favicon.ico" type="image/x-icon"/>
+    <link rel="shortcut icon" href="./image/favicon.png" type="image/x-icon">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="./image/favicon.jpg">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="./image/favicon_114x114.jpg">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="./image/favicon_114x114.jpg">
+    <link rel="stylesheet" href="./css/reset.css">
+    <style>
+        *{margin: 0; padding: 0;}
+        body,html{width: 100%; height: 100%;}
+        ul{list-style: none;}
+        a{text-decoration: none;}
+        button, lable, input{background: transparent; border:0; outline: 0;}
+        
+        .collap{width: 100%; height: 100%; position: fixed; top: 0; left: -100%; z-index: 999; background: #000; transition: 1s;}
+        .collap.on{left: 0;}
+        .c_logo{width: 140px; height: auto; margin-left: 20px; margin-top: 15px; float: left;}
+        .c_logo img{display: block; width: 100%; height: auto;}
+        .close {width: 20px; height: 20px; float: right; margin-top: 15px; margin-right: 15px; background-image: url(./image/close_btn.png); background-position: center center; background-size: cover;}
+        .gnb{clear: both; padding-top: 40px; width: 100%;}
+        .gnb li{line-height: 40px; padding: 10px;}
+        .gnb li a{display: block; font-size: 1.em; font-weight: bold; text-indent: 15px;color: #fff; font-family: "나눔스퀘어라운드";}
+        
+        .lst{width: 36px; height: 36px;float: left;background-color: #000; background-image: url(./image/menu_icon.png); background-position: center center;background-repeat: no-repeat; background-size: 20px auto; margin-top: 5px; margin-left: 8px;}
+        .wrap{margin-left: 0; width: 100%; transition: 1s;}
+        .wrap.on{margin-left: 100%;}
+        .hd{position: fixed; top: 0; left: 0; z-index: 99; transition: 0.5s; width: 100%; height: 50px; background-color: transparent;}
+        .hd.on{background-color: #000;}
+        .logo{display: block; width:100px; height: 40px; margin-top: 5px; float: left; margin-left: 95px; background-image: url(./image/h_logo.png); background-size: 50% auto; background-position: bottom; background-repeat: no-repeat;}
+        .hd.on .logo{background-position: top;}
+        
+        #vs1{width: 100vw; height: 100vh; overflow: hidden; position: relative;}
+        .img_box {width: 400%; height: 100%;}
+        .img_box li{float: left; width: 25%; height: 100%; position: relative;}
+        .img_box .img_con{display: block; width: auto; height: 100%;}
+        .tit_box{position: absolute; top: 25%; left: 15%; width: 70%; z-index: 10;}
+        .detail{display: block; position: absolute; bottom: 35%; left:15%; z-index: 11; width: 42px; height: 42px; background-image: url(./image/btn_play3.png); background-size: 42px 42px; background-repeat: no-repeat;}
+        
+        .btn_frame{position: absolute; bottom: 20%; left: 15%; z-index: 20; width: 70%;}
+        .btn_box{position: relative; width: 100%; height: 16px;}
+        .btn_box li{position: absolute; width: 16px;height: 16px; top: 4px;}
+        .btn_box li button{display: block; width:8px; height: 8px; border-radius: 5px; border: 1px solid #000; background-color: transparent;}
+        .btn_box li.on button{background-color: #000;}
+        .btn_box li.item1 {left:0;}
+        .btn_box li.item2 {left:16px;}
+        .btn_box li.item3 {left:32px;}
+        .btn_box li.item4 {left:48px;}
+        div.play{left: 64px; top: 0; position: absolute; width: 16px; height: 16px; z-index: 30;}
+        div.play button{width: 16px; height: 16px; background-image: url(./image/btn_play2.png); background-position: center center; background-repeat: no-repeat; border: 0; border-radius: 0; background-size: cover;}
+        div.play.on button{background-image: url(./image/btn_play.png);}
+        
+        #vs2{height: 100%;}
+        #vs2 li.slide_01 {float: left; width: 100%;}
+        #vs2 li div.slide_01_inner{width: 100%;}
+        #vs2 .img_wrap{width: 100%;}
+        #vs2 .img_wrap img{display: block; width: 100%; height: auto;}
+        .p_index, .tit2 { font-size:1.8rem; margin:0; padding-left:5%; margin-top:0.5em; color:#005295; }
+        .p_date, .tit3 { font-size:1.1rem; padding-left:5%; margin-top:1em; color:#333; } 
+        .p_date span { padding: 10px; }   
+        .p_tit { font-size:2.6rem; line-height:1.4; margin-top:0.5em; color:#555; padding-left:5%; }    
+        .p_text, .com2 { font-size:1.2rem; padding:5%; }  
+        .btn_more2_wrap, .more2 { padding-left:5%; line-height:1.6; font-size:1.4rem; font-weight:bold; display:block; }
+        .txt_wrap{text-align: center;line-height: 30px;}
+        .txt_wrap .tit{font-weight: 800;}
+        
+        #page1{width: 100vw; height: 80vh; margin-top: 50px; clear: both;}
+        #page1 img{display: block; width: 100%; height: 100%;}
+        
+        #vs3{width: 100vw; height: 100vh; position: relative;overflow: hidden; padding-top:30px;}
+        .thum_box{width: 700;}
+        .thum_box li{float: left; margin: 10px;width: 110px; height: 110px; border: 3px solid #fff;}
+        .thum_box li img{width: 110px; height: auto;}
+        .thum_box li.item1.on{border: 3px solid #be0000;}
+        .thum_box li.item2.on{border: 3px solid #be0000;}
+        .thum_box li.item3.on{border: 3px solid #be0000;}
+        .big_img_box{clear: both; width: 300%; height: 900%;}
+        .big_img_box li{width: 40%; float: left; margin-left:1%; margin-right: 1% ; height: 100%;}
+        .big_img_box li img{width: 70%; height: auto; margin-left: 5%; padding-top: 10px;}
+        
+        .ft { clear:both; background: #000;color: #fff;}  
+        .fnb { width:96%; margin:0 auto; padding-top:10px;  margin-left: 100px;} 
+        .fnb li {float: left; padding:1em;}    
+        .fnb li a { display:block; font-size:1em; font-weight:500; }    
+        .fnb .left { float:left; }   
+        .linkbox { clear:both; width:300px; margin:0 auto; } 
+        .linkbox li { float:left; padding-left:8px; padding-right:8px; }  
+        .linkbox li.item1 a:after { content:"|"; padding-left:16px;  color: #fff;}
+        .linkbox li.item1 a { color:#fff; padding-left:20px;}
+        .linkbox li.item2 a { color:#fff; padding-left:5px;} 
+        .addr{font-size: 14px;}
+        .addr, .copyright { clear:both; display:block; line-height:2.4; text-align:center; }    
+        .ft_logo { display:block; width:150px; height:30px; margin:0 auto; }   
+        .to_top { display:block; position:fixed; bottom:18%; right:15px; width: 32px; height: 32px; 
+/*            background-image:url("./image/btn_top.png"); */
+            background-size:cover; 
+            z-index:99; box-shadow:1px 1px 20px #111; border-radius:17px; display:none; } 
+
+    </style>
+    <link rel="stylesheet" href="./css/ktswiper.css">
+    <script src="./js/jquery-latest.js"></script>
+    <script src="./js/ktswiper.min.js"></script>
+    <script>
+    $(document).ready(function(){
+        $(".ktswiper-track").ktswiper({
+          infinite:true, //양방향 무한 모션
+          speed:300, // 슬라이드 스피드
+          autoplay: true, //자동플레이 유무( false시 자동플레이 안됨 )
+          autoplaySpeed:4000, // 자동플레이 스피드
+          slidesToShow:1, //한 화면에 보여줄 아이템수
+          slidesToScroll: 1, // 한번에 슬라이드 시킬 아이템 개수
+          arrows:false //좌우 화살 버튼 노출 여부 ( false 시 안보임 )
+        }); 
+     })
+    </script>
+    <script>
+    $(document).ready(function(){
+       $(".lst").click(function(){
+           $(".collap").addClass("on");
+           $(".wrap").addClass("on");
+       });
+        $(".close").click(function(){
+           $(".collap").removeClass("on");
+           $(".wrap").removeClass("on");
+       });
+        $(window).scroll(function(){
+            var par = parseInt($(window).scrollTop());
+            if(par>=200){
+                $(".hd").addClass("on");
+            } else{
+                $(".hd").removeClass("on");
+            }
+        });
+        $(".to_top").click(function(){
+            $("body, html").animate({"scrollTop" : 0}, 1000);
+        });
+    });
+    $(document).ready(function(){
+        var wd = parseInt($(window).width());//창의 너비를 계산하여 wd변수에 저장
+        var intv = setInterval(function(){
+           nextAni(); //주기적으로 3초마다 nextAni() 함수를 실행
+        }, 3000);
+        function nextAni(){
+            //.img_box를 0.8초 동안 창의 너비 만큼 왼쪽으로 슬라이딩
+            $(".img_box").not(":animated").animate({"margin-left":-wd+"px"},800, function(){
+                //첫번째 .img_box의 자식인 li를 맨 끝으로 보냄
+                $(".img_box li").eq(0).appendTo($(".img_box"));
+                //.img_box의 왼쪽 마진의 0으로 설정
+                $(".img_box").css("margin-left","0px");
+                $(".btn_box li").eq(0).appendTo($(".btn_box"));
+                $(".btn_box li").removeClass("on");
+                $(".btn_box li").eq(0).addClass("on");
+            });
+        }
+        var sw = true;
+        $(".play").click(function(){
+           if(sw==true){
+               $(this).addClass("on");
+               clearInterval(intv);
+           } else{
+               $(this).removeClass("on");
+               nextAni();
+               intv = setInterval(function(){
+                   nextAni();
+               }, 3000);
+            }
+            sw= !sw;
+        });
+        //누른 버튼의 앞에 있는 요소는 모두 뒤로 보내고, 누른 해당 버튼의 모션이 실행
+        $(".btn_box li").click(function(){
+            var idx = $(this).index()-1;
+            clearInterval(intv);
+            for(var i=0;i<idx;i++){
+                $(".btn_box li").eq(0).appendTo($(".btn_box"));
+                $(".img_box li").eq(0).appendTo($(".img_box"));
+            }
+            nextAni();
+            intv = setInterval(function(){
+                   nextAni();
+            }, 3000);
+        });
+    });
+    </script>
+    <script>
+    $(document).ready(function(){
+        var wd2 = parseInt($(window).width());
+        function bigNext(){
+            $(".big_img_box").not(":animated").animate({"margin-left":-wd2+"px"}, 700, function(){
+                $(".big_img_box li").eq(0).appendTo($(".big_img_box"));
+                $(".big_img_box").css("margin-left","0px");
+                $(".thum_box").animate({"margin-left":"-130px"}, 10, function(){
+                    $(".thum_box li").eq(0).appendTo($(".thum_box"));
+                    $(".thum_box").css("margin-left", "0px");
+                    $(".thum_box li").removeClass("on");
+                    $(".thum_box li").eq(0).addClass("on");
+                });
+            });
+        }
+        var intv2 = setInterval(function(){ bigNext(); }, 3600);
+
+        $(".thum_box li").click(function(){
+            var idx2 = $(this).index()-1;
+            clearInterval(intv2);
+            for(var i=0;i<idx2;i++){
+                $(".thum_box li").eq(0).appendTo($(".thum_box"));
+                $(".big_img_box li").eq(0).appendTo($(".big_img_box"));
+            }
+            bigNext();
+            intv2 = setInterval(function(){
+                bigNext();
+            }, 3600);
+        });
+    });    
+    </script>
+</head>
+<body>
+    <div class="collap">
+        <div class="c_logo"><img src="./image/logo.png" alt=""></div>
+        <div class="close"></div>
+        <nav class="gnb">
+            <ul class="menu">
+                <li class="item1"><a href="sub1.html">향수</a></li>
+                <li class="item2"><a href="sub2.html">메이크업</a></li>
+                <li class="item3"><a href="sub3.html">보이 드 샤넬</a></li>
+                <li class="item4"><a href="sub4.html">의류</a></li>
+                <li class="item5"><a href="sub5.html">악세사리</a></li>
+            </ul>
+        </nav>
+    </div>
+    <div class="wrap">
+        <header class="hd">
+            <div class="lst"></div>
+            <a href="" class="logo"></a>
+        </header>
+        <div id="vs1">
+            <ul class="img_box">
+                <li class="item1">
+                    <img src="./image/visual1.png" alt="" class="img_con">
+                    <div class="tit_box"><img src="" alt=""></div>
+                    <a href="" class="detail"></a>
+                </li>
+                <li class="item2">
+                    <img src="./image/visual2.png" alt="" class="img_con">
+                    <div class="tit_box"><img src="" alt=""></div>
+                    <a href="" class="detail"></a>
+                </li>
+                <li class="item3">
+                    <img src="./image/visual3.png" alt="" class="img_con">
+                    <div class="tit_box"><img src="" alt=""></div>
+                    <a href="" class="detail"></a>
+                </li>
+                <li class="item4">
+                    <img src="./image/visual4.png" alt="" class="img_con">
+                    <div class="tit_box"><img src="" alt=""></div>
+                    <a href="" class="detail"></a>
+                </li>
+            </ul>
+            <div class="btn_frame">
+                <ul class="btn_box">
+                    <li class="item1 in"><button></button></li>
+                    <li class="item2"><button></button></li>
+                    <li class="item3"><button></button></li>
+                    <li class="item4"><button></button></li>
+                </ul>
+                <div class="play"><button></button></div>
+            </div>
+        </div>
+        <ul class="ktswiper-track" id="vs2">
+            <li class="slide_01 ktswiper-slide ktswiper-cloned" data-ktswiper-index="0" aria-hidden="false" tabindex="-1" style="display:none;">
+                <div class="sl_01_inner">
+                    <div class="img_wrap"><img src="" alt=""></div>
+                    <div class="txt_wrap">
+                        <h3 class="tit"></h3>
+                        <p class="com"></p>
+                        <a href="" class="more"></a>
+                    </div>
+                </div>
+            </li>
+            <li class="item1">
+                <div class="sl_inner">
+                    <div class="img_wrap"><img src="./image/bag_1.png" alt=""></div>
+                    <div class="txt_wrap">
+                        <h3 class="tit">보이 샤넬 라지 플랩 백</h3>
+                        <p class="com">트위드, 카프스킨, 골드 메탈<br>5,280,000원</p>
+                        <a href="" class="more"></a>
+                    </div>
+                </div>
+            </li>
+            <li class="item2">
+                <div class="sl_inner">
+                    <div class="img_wrap"><img src="./image/bag_2.png" alt=""></div>
+                    <div class="txt_wrap">
+                        <h3 class="tit">플랩 백</h3>
+                        <p class="com">램스킨, 판타지 펄, 골드 메탈<br>4,040,000원</p>
+                        <a href="" class="more"></a>
+                    </div>
+                </div>
+            </li>
+            <li class="item3">
+                <div class="sl_inner">
+                    <div class="img_wrap"><img src="./image/bag_3.png" alt=""></div>
+                    <div class="txt_wrap">
+                        <h3 class="tit">핸들 장식의 스몰 플랩 백</h3>
+                        <p class="com">그레인드 카프스킨, 골드 메탈<br>4,910,000원</p>
+                        <a href="" class="more"></a>
+                    </div>
+                </div>
+            </li>
+            <li class="item4">
+                <div class="sl_inner">
+                    <div class="img_wrap"><img src="./image/bag_4.png" alt=""></div>
+                    <div class="txt_wrap">
+                        <h3 class="tit">핸들 장식의 스몰 플랩 백</h3>
+                        <p class="com">카프스킨, 골드 메탈<br>5,250,000원</p>
+                        <a href="" class="more"></a>
+                    </div>
+                </div>
+            </li>
+        </ul>
+        <div id="page1">
+            <img src="./image/boy_img.jpg" alt="보이드샤넬">
+        </div>
+        <div id="vs3">
+           <ul class="thum_box">
+               <li class="item1"><img src="./image/mo_1.png" alt="모델" class="thumnail"></li>
+               <li class="item2"><img src="./image/mo_2.png" alt="모델" class="thumnail"></li>
+               <li class="item3"><img src="./image/mo_3.png" alt="모델" class="thumnail"></li>
+           </ul>
+            <ul class="big_img_box">
+                <li class="item1">
+                    <img src="./image/mo_1.png" alt="모델">
+                    <h4 class="tit2"></h4>
+                    <h3 class="tit3"></h3>
+                    <p class="com2"></p>
+                    <a href="" class="more2"></a>
+                </li>
+                <li class="item2">
+                    <img src="./image/mo_2.png" alt="모델">
+                    <h4 class="tit2"></h4>
+                    <h3 class="tit3"></h3>
+                    <p class="com2"></p>
+                    <a href="" class="more2"></a>
+                </li>
+                <li class="item3">
+                    <img src="./image/mo_3.png" alt="모델">
+                    <h4 class="tit2"></h4>
+                    <h3 class="tit3"></h3>
+                    <p class="com2"></p>
+                    <a href="" class="more2"></a>
+                </li>
+            </ul>
+        </div>
+        <footer class="ft">
+            <nav class="fnb">
+                <ul class="left">
+                    <li class="item1"><a href=""></a>Meet Us</li>
+                    <li class="item2"><a href=""></a>뉴스레터 구독</li>
+                </ul>
+                <ul class="right">
+                    <li class="item1"><a href=""></a></li>
+                    <li class="item2"><a href=""></a></li>
+                    <li class="item3"><a href=""></a></li>
+                </ul>
+            </nav>
+            <ul class="linkbox">
+                <li class="item1"><a href="">개인정보처리방침</a></li>
+                <li class="item2"><a href="">채용 공고</a></li>
+            </ul>
+            <address class="addr">서울특별시 중구 세종대로9길 41, 11층 (서소문동, 퍼시픽타워)</address>
+            <p class="copyright">&copy; ALL Copyright choijiseon.</p>
+            <img src="./image/logo.png" alt="" class="ft_logo">
+        </footer>
+        <a href="#" class="to_top"></a>
+    </div>
+</body>
+</html>

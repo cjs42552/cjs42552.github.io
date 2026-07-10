@@ -1,0 +1,27 @@
+/* common footer style -> ft.css */
+@charset "utf-8";
+.ft { clear:both; }  
+.fnb { width:96%; margin:0 auto; padding-top:10px; } 
+.fnb li { float:left; padding:1em; }    
+.fnb li a { display:block; font-size:1em; font-weight:500;  }    
+.fnb .left { float:left; }  
+.fnb .left li a { padding-left:18px; background-size:14px auto; 
+    background-repeat:no-repeat; background-position:left center; }
+.fnb .left li.item1 a { background-image:url("./images/f_faq.png"); }    
+.fnb .left li.item2 a { background-image:url("./images/f_mail.png"); }    
+.fnb .right { float:right; } 
+.fnb .right li { padding: 0; }    
+.fnb .right li a { background-repeat:no-repeat; background-size:90px auto; background-image:url("./images/sns_link.png"); width:22px; height:22px; padding:0; }  
+.fnb .right li.item1 a { background-position:0px 0px; }
+.fnb .right li.item2 a { background-position:-32px 0px; }    
+.fnb .right li.item3 a { background-position:-68px 0px; } 
+.linkbox { clear:both; width:200px; margin:0 auto; } 
+.linkbox li { float:left; padding-left:8px; padding-right:8px; }  
+.linkbox li.item1 a:after { content:"|"; padding-left:16px;  }
+.linkbox li.item2 a { color:#26e; padding-left:24px; 
+    background-image:url("./images/ft_ico2.png"); background-repeat: no-repeat;
+    }   
+.addr, .copyright { clear:both; display:block; line-height:2.4; text-align:center; }    
+.ft_logo { display:block; width:194px; height:25px; margin:0 auto; }   
+.to_top { display:block; position:fixed; bottom:18%; right:15px; width: 32px; height: 32px; background-image:url("./images/btn_top.png"); background-size:cover; 
+    z-index:99; box-shadow:1px 1px 20px #111; border-radius:17px; display:none; } 

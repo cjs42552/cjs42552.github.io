@@ -1,0 +1,9 @@
+@charset "UTF-8";
+@font-face{
+    font-family:"busan";
+    src:url("./font/busan.woff") format("woff"),
+        url("./font/busan.woff2") format("woff2"),
+        url("./font/busan.ttf") format("truetype");
+    font-weight:normal;
+    font-style:normal;
+}

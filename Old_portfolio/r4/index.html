@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>카카오스타일</title>
+    <link rel="shortcut icon" href="./image/favicon.png" />
+    <meta http-equiv="Pragma" content="no-cache"> 
+    <meta http-equiv="Cache-Control" content="No-Cache"> 
+    <meta http-equiv="Expires" content="-1"> 
+    <meta name="title" content="롯데엘스타일" />
+    <meta name="description" content="롯데백화점이 제안하는 트랜디한 패션 & 라이프스타일, 파슨스, 유닛, 뷰, 에토르, 살롱드샬롯, 동심서당, 소공원, 엘리든, 롯데탑스" />
+    <meta name="keywords" content="파슨스, 유닛, 뷰, 에토르, 살롱드샬롯, 동심서당, 소공원, 엘리든, 롯데탑스" />
+    <meta name="image" content="./src/logo_elstyle.png" />
+    <meta property="og:url" content="주소" />
+    <meta property="og:title" content="롯데엘스타일 " />
+    <meta property="og:description" content="롯데백화점이 제안하는 트랜디한 패션 & 라이프스타일, 파슨스, 유닛, 뷰, 에토르, 살롱드샬롯, 동심서당, 소공원, 엘리든, 롯데탑스" />
+    <meta property="og:image" content="http://www.lotte-elstyle.com/images/main/logo_elstyle.png" />	
+    <meta property="og:type" content="company" />
+    <meta property="og:site_name" content="Elstyle" />
+    <meta property="og:locale" content="ko_KR" />
+    <link rel="stylesheet" href="reset.css">
+    <script src="https://code.jquery.com/jquery-latest.js"></script>
+    <style>
+    .tnb { width: 100%; height: 51px; border-bottom:1px solid #ffed00; } 
+    .tnb_wrap { width:1280px; margin:0 auto; }
+    .gnb_top { display:none; width:25px; height:25px;  
+        background-image:url("./image/btn_menu.png"); background-position:center center;
+        background-repeat:no-repeat; background-size:20px auto; text-indent:-9999px; 
+        position:absolute; left:10px; top:13px; z-index:70; cursor:pointer; }
+    .top_close { display:none; width:46px; height:50px; 
+        background-image:url("./image/btn_close.png"); background-position:center center;
+        background-repeat:no-repeat; text-indent:-9999px; 
+        position:fixed; right:2%; top:5px; z-index:99; cursor:pointer; }    
+    .brand-list_gnb { float:left; position:static; left:0; top:0; width:auto; 
+        height:auto; z-index:auto; background-color:transparent; transition:0.5s; 
+        padding-left:0; padding-top:0; }    
+    .brand-list_gnb li { float:left; padding:1em 0.7em; position:relative; overflow:hidden;} 
+    .brand-list_gnb li:after { content:""; display:block; 
+        width:100%; height:2px; position:absolute; background:#ff0098;
+        left:-190px; bottom:5px; transition:0.5s; transition-timing-function:ease-out; z-index: -1; }
+    .brand-list_gnb li:hover::after { left:0px;}
+    .brand-list_gnb li a { color:#333; background: #fff; display: block; width: 100%;}   
+    .brand-list_gnb li:hover a{ color:#ff0098; }  
+    .brand-list_gnb .home{text-indent: -99999px; display:block; width:100px; height:22px; 
+        background-image:url("./image/m_menulogo.png");
+       background-position:center center; }
+    
+    .logo { display:block; width:197px; height:45px; margin:30px auto; 
+        background-image:url("./image/img_style_170925.png");
+       background-position:0 0; }    
+    #gnb { clear:both; width:100%;  margin:0 auto; }  
+    #gnb .menu { width:400px; margin:0 auto; }    
+    #gnb li { float:left; position:relative; } 
+    #gnb li .mn1:after { content:"|"; padding-left:24px; }     
+    #gnb li.item4 .mn1:after { content:""; }     
+    #gnb li button { font-size:1.4em; padding-right:24px; cursor:pointer; }
+    #gnb li a { font-size:1.2em; }    
+        
+    .pro_slider { width:1080px; height:200px; margin:28px auto; overflow:hidden; 
+        padding-top:40px; } 
+    .sl_box { width:3000px; margin-left:0; }    
+    .sl_box li { float:left;  padding:10px; }
+    .thum_box { display:block; width: 160px; height:195px; text-align:center; }  
+    .thum_item { width:160px; height:160px; background-position:center center;
+        background-repeat:no-repeat; background-size:100% 100%; transition:0.5s; 
+        border-radius:40px; overflow:hidden; }
+    .thum_box:hover .thum_item { background-size:150% 150%; }    
+    .item1 .thum_item {background-image:url("./image/th01.png"); }
+    .item2 .thum_item {background-image:url("./image/th02.png"); }
+    .item3 .thum_item {background-image:url("./image/th03.png"); }
+    .item4 .thum_item {background-image:url("./image/th04.png"); }
+    .item5 .thum_item {background-image:url("./image/th05.png"); }
+    .item6 .thum_item {background-image:url("./image/th06.png"); }
+    .item7 .thum_item {background-image:url("./image/th01.png"); }
+    .item8 .thum_item {background-image:url("./image/th02.png"); }
+    .item9 .thum_item {background-image:url("./image/th03.png"); }
+    .item10 .thum_item {background-image:url("./image/th04.png"); }
+    .item11 .thum_item {background-image:url("./image/th05.png"); }
+    .item12 .thum_item {background-image:url("./image/th06.png"); }
+    .thum_txt { display:block; line-height:40px; font-size:1.2em; }    
+    .thum_box:hover .thum_txt { font-weight:bold; }
+    .thum_btn_box { position:relative; width:1300px; margin:0 auto; }    
+    .thum_btn_box li { position:absolute; top:-150px; z-index:50; }
+    .thum_btn_box li button { display:block; width:20px; height:45px; 
+        background-size:100% auto; background-repeat:no-repeat; cursor:pointer; }
+    .thum_btn_box li.left { left:5%; }    
+    .thum_btn_box li.right { right:5%; }        
+    .thum_btn_box li.left button { background-image:url("./image/btn_bk_prev.png"); }    
+    .thum_btn_box li.right button { background-image:url("./image/btn_bk_next.png"); }    
+    .content { clear:both; }    
+    .con_lst { width:1150px; margin:20px auto; }    
+    .con_lst li { float:left; padding:10px; position:relative;  }
+    .con_lst li .pic_box { padding:10px 0px; position:relative; float:none;
+        clear:both; }   
+    .pic { border:1px solid #ccc;  width: 360px;}
+    .ft { clear:both; }  
+    .ft_wrap { width:1200px; margin:5px auto; }   
+    .copyright { line-height:1.6; font-size:1.2em; padding:2em; word-wrap:break-word;  }    
+    .store_detail { display:block; width: 105px; height: 105px; 
+        position:fixed; right:4%; bottom:3%; z-index:99; 
+        background-image:url("./image/ico_style_190425.png");
+        background-position: 0 -570px; }    
+    
+
+    @media screen and (max-width:767px){
+        body, html { min-width:100%; }
+        .gnb_top { display:block; }
+        .tnb_wrap { width:100%; }
+        .brand-list_gnb { position:fixed; left:-110%; top:0; z-index:90; 
+        background-color:#fff; width:100vw; height:100vh; transition:0.5s; 
+        padding-left:40px; padding-top:20px; }
+        .brand-list_gnb li { clear:both; padding:0.7em; }
+        .brand-list_gnb.on { left:0; }
+        #gnb { width: 80%;}
+        #gnb li button{ font-size:1em; }   
+        .pro_slider { width:180px;   }
+        .thum_btn_box { width:100%; }
+        .con_lst { width:100%; overflow-x:hidden; }
+        .con_lst li { padding:10px; text-align:center; }
+        .con_lst li .pic_box { width:calc(100vw - 20px); margin:0 auto; text-align:center; clear:both; height:auto; }
+        .pic { width:calc(100vw - 40px); margin:0 auto; height: auto; } 
+        .brand_main .em_box { bottom:0; }  
+        .pic_home {  font-size:1.1em; } 
+        .ft_wrap { width:100%; }
+        .store_detail {display: none; background: none;}
+    }
+    @media screen and (min-width:768px) and (max-width:959px){
+        body, html { min-width:100%; }
+        .tnb_wrap { width:100%; }
+        .brand-list_gnb { position:relative; width:688px; margin:0 auto;
+        left:auto; top:auto; padding-left:0; padding-top:0; }
+        .brand-list_gnb li:nth-child(9) { display:none; }
+        .brand-list_gnb li:nth-child(10) { display:none; }
+        .brand-list_gnb li:nth-child(11) { display:none; }
+        .brand-list_gnb li:nth-child(12) { display:none; }
+        .brand-list_gnb li:nth-child(13) { display:none; }
+        .brand-list_gnb li:nth-child(14) { display:none; }
+        .pro_slider { width:540px; overflow-x:hidden; }
+        .thum_btn_box { width:100%; }
+        .con_lst { width:100%; margin:0; }
+        .con_lst .item3{display: none;}
+        .con_lst li { float:left; height:auto; padding:0;  }
+        .con_lst li .pic_box{float:left; padding:8px; width:auto; height:575px;}
+        .pic { height:575px; width:auto;}
+        .pic { width:calc(50vw - 20px); }
+    }
+    </style>
+    <script>
+    $(document).ready(function(){
+       $(".gnb_top").click(function(){
+           $(".brand-list_gnb").addClass("on");
+           $(".top_close").fadeIn();
+       }); 
+       $(".top_close").click(function(){
+           $(".brand-list_gnb").removeClass("on");
+           $(".top_close").fadeOut();
+       });    
+        var sl_wd = parseInt($(".sl_box li").width());
+        var len = $(".sl_box li").length;
+        $(".thum_btn_box li.left").click(function(){
+            $(".sl_box li").eq(len-1).prependTo($(".sl_box"));
+            $(".sl_box").css("margin-left",-sl_wd+"px");
+            $(".sl_box").not(":animated").animate({"margin-left":"0px"}, 600);
+        });   
+        $(".thum_btn_box li.right").click(function(){
+            $(".sl_box").not(":animated").animate({"margin-left":-sl_wd+"px"}, 600, function(){
+                $(".sl_box li").eq(0).appendTo($(".sl_box"));
+                $(".sl_box").css("margin-left","0px");                
+            });
+        });   
+    });    
+    </script>
+</head>
+<body>
+<nav class="tnb">
+	<div class="tnb_wrap">
+		<div class="gnb_top">
+			<p class="txt">menu</p>
+		</div>
+		<ul class="brand-list_gnb">
+			<li><a href="index.html" class="home">HOME</a></li>
+			<li><a href="#">WOMEN</a></li>
+			<li><a href="#">DRESS</a></li>
+			<li><a href="#">TOP</a></li>
+			<li><a href="#">SKIRTS</a></li>
+			<li><a href="#">OUTER</a></li>
+			<li><a href="#">BAG</a></li>
+			<li><a href="#">SHOES</a></li>
+			<li><a href="#">ACC</a></li>
+			<li><a href="#">HAIR/BEAUTY</a></li>
+			<li><a href="#">MEN</a></li>
+			<li><a href="#">MEN'S BAG</a></li>
+			<li><a href="#">KIDS</a></li>
+		</ul>
+		<div class="top_close">
+			<p class="txt">close brand</p>
+		</div>
+	</div>
+</nav>	
+<header class="hd">
+    <a href="index.html" class="logo"></a>
+    <nav id="gnb">
+        <ul class="menu">
+            <li class="item1">
+                <button class="mn1">HOT</button>
+            </li>
+            <li class="item2">
+                <button class="mn1">SOHO</button>
+            </li>
+            <li class="item3">
+                <button class="mn1">SALE</button>
+            </li>
+            <li class="item4">
+                <button class="mn1">SHOP</button>
+            </li>
+        </ul>
+    </nav>
+</header>
+<div class="pro_slider">
+    <ul class="sl_box">
+        <li class="item1">
+            <a href="" class="thum_box">
+                <div class="thum_item"></div>
+                <span class="thum_txt">잇쏘</span>
+            </a>
+        </li>
+        <li class="item2">
+            <a href="" class="thum_box">
+                <div class="thum_item"></div>
+                <span class="thum_txt">마이바니</span>
+            </a>
+        </li>
+        <li class="item3">
+            <a href="" class="thum_box">
+                <div class="thum_item"></div>
+                <span class="thum_txt">난닝구</span>
+            </a>
+        </li>
+        <li class="item4">
+            <a href="" class="thum_box">
+                <div class="thum_item"></div>
+                <span class="thum_txt">갠소</span>
+            </a>
+        </li>
+        <li class="item5">
+            <a href="" class="thum_box">
+                <div class="thum_item"></div>
+                <span class="thum_txt">쵸퍼</span>
+            </a>
+        </li>
+        <li class="item6">
+            <a href="" class="thum_box">
+                <div class="thum_item"></div>
+                <span class="thum_txt">시크폭스</span>
+            </a>
+        </li>
+        <li class="item7">
+            <a href="" class="thum_box">
+                <div class="thum_item"></div>
+                <span class="thum_txt">잇쏘</span>
+            </a>
+        </li>
+        <li class="item8">
+            <a href="" class="thum_box">
+                <div class="thum_item"></div>
+                <span class="thum_txt">마이바니</span>
+            </a>
+        </li>
+        <li class="item9">
+            <a href="" class="thum_box">
+                <div class="thum_item"></div>
+                <span class="thum_txt">난닝구</span>
+            </a></li>
+        <li class="item10">
+            <a href="" class="thum_box">
+                <div class="thum_item"></div>
+                <span class="thum_txt">갠소</span>
+            </a></li>
+        <li class="item11">
+            <a href="" class="thum_box">
+                <div class="thum_item"></div>
+                <span class="thum_txt">초퍼</span>
+            </a></li>
+        <li class="item12">
+            <a href="" class="thum_box">
+                <div class="thum_item"></div>
+                <span class="thum_txt">시크폭스</span>
+            </a></li>
+    </ul>
+</div>
+<ul class="thum_btn_box">
+    <li class="left">
+        <button class="thum_btn"></button>
+    </li>
+    <li class="right">
+        <button class="thum_btn"></button>
+    </li>
+</ul>
+<div class="content">
+    <ul class="con_lst">
+        <li class="item1 col">
+            <div class="pic_box">
+                <a href=""><img src="./image/one.png" alt="parsons" class="pic"></a>
+            </div>
+            <div class="pic_box" class="item2">
+                <a href=""><img src="./image/woman.png" alt="oven" class="pic"></a>
+            </div>
+            <div class="pic_box">
+                <a href=""><img src="./image/under.png" alt="charlotte" class="pic"></a>
+            </div>
+        </li>
+        <li class="item2 col">
+            <div class="pic_box">
+                <a href=""><img src="./image/summer.png" alt="vieu" class="pic"></a>
+            </div>
+            <div class="pic_box" class="item2">
+                <a href=""><img src="./image/brand.png" alt="dongshim" class="pic"></a>
+            </div>
+            <div class="pic_box">
+                <a href=""> <img src="./image/sport.png" alt="ettol" class="pic"></a>
+            </div>
+        </li>
+        <li class="item3 col">
+            <div class="pic_box">
+                <a href=""> <img src="./image/man.png" alt="unit" class="pic"></a>
+            </div>
+            <div class="pic_box" class="item2">
+                <a href=""><img src="./image/hair.png" alt="sogongwon" class="pic"></a>
+            </div>
+            <div class="pic_box">
+                <a href=""> <img src="./image/shoes.png" alt="lottetops" class="pic"></a>
+            </div>
+        </li>
+    </ul>
+</div>
+<footer class="ft">
+    <div class="ft_wrap">
+        <p class="copyright">copyright 2019. kakaostyle. all rights reserved.</p>
+    </div>
+</footer>
+<a href="store.html" class="store_detail"></a>
+</body>
+</html>

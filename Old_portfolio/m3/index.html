@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>롯데시네마</title>
+    <meta http-equiv="X-UA_conpatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta http-equiv="Expires" content="-1">
+    <meta http-equiv="Prabma" content="no-cache">
+    <meta http-equiv="cache-control" content="no-cache">
+    <link rel="icon" href="./image/favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="./image/favicon.png" type="image/x-icon">
+    <link rel="stylesheet" href="./css/reset.css">
+    <script src="./js/jquery-latest.js"></script>
+    <style>
+    *{margin: 0; padding: 0;}
+    body,html{width: 100%; height: 100%;}
+    ul{list-style: none;}
+    a{text-decoration: none;}
+    button, lable, input{background: transparent; border:0; outline: 0;}
+        
+    .wrap{margin-left: 0; width: 100%; transition: 1s;}
+    .wrap.on{margin-left: 100%;}
+    .hd{position: fixed; top: 0; left: 0; z-index: 99; transition: 0.5s; width: 100%; height: 50px; background-color: rgba(0,0,0,.4);}
+    .hd.on{background-color: #000;}
+    .menu{width: 36px; height: 36px;float: left;background-color: #da291c; background-image: url(./image/main_menu_icon.png); background-position: center center;background-repeat: no-repeat; background-size: 20px auto; margin-top: 6px; margin-left: 8px;}
+    .logo{display: block; width:100px; height:50px; float: left;margin-top: 6px;margin-left: 120px; background-image: url(./image/logo.png); background-size: 30% auto; background-repeat: no-repeat;}
+    .hd.on .logo{}
+    .t_list{float: right;}
+    .t_list label img{width: 50px; height: 50px; margin-top: -3px;}
+    
+    .visual{width: 100vw; height: 100vh; overflow: hidden; position: relative;}
+    .img_box {width: 400%; height: 100%;}
+    .img_box li{float: left; width: 25%; height: 100%; position: relative;}
+    .img_box .img_con{display: block; width: auto; height: 100%;}
+    .detail{display: block; position: absolute; bottom: 35%; left:15%; z-index: 11; width: 42px; height: 42px; background-image: url(./image/btn_play3.png); background-size: 42px 42px; background-repeat: no-repeat;}
+    .btn_frame{position: absolute; bottom: 20%; left: 15%; z-index: 20; width: 70%;}
+    .btn_box{position: relative; width: 100%; height: 16px;}
+    .btn_box li{position: absolute; width: 16px;height: 16px; top: 4px;}
+    .btn_box li button{display: block; width:8px; height: 8px; border-radius: 5px; border: 1px solid #fff; background-color: transparent;}
+    .btn_box li.on button{background-color: #fff;}
+    .btn_box li.item1 {left:0;}
+    .btn_box li.item2 {left:16px;}
+    .btn_box li.item3 {left:32px;}
+    .btn_box li.item4 {left:48px;}
+    div.play{left: 64px; top: 0; position: absolute; width: 16px; height: 16px; z-index: 30;}
+    div.play button{width: 16px; height: 16px; background-image: url(./image/btn_play2.png); background-position: center center; background-repeat: no-repeat; border: 0; border-radius: 0; background-size: cover;}
+    div.play.on button{background-image: url(./image/btn_play.png);}
+        
+    .content{width: 100vw; height:50vh; background: #e8e8e8; padding: 50px 0;position: relative;}
+    .cont{width: 90%; margin: 0 auto; height: 100%;background: #ffffff; box-shadow: 0 0 3px rgba(0,0,0,.2);}
+    .cont h2{font-family: "나눔바른고딕", sans-serif; padding: 20px; font-size: 1.7em;float: left;}
+    .cont>a{float: right; font-family: "나눔바른고딕", sans-serif; padding: 20px; font-size: 2em; color: #000;}
+    .cont .cont_menu{clear: both;}
+    .cont .cont_menu li{float: left; margin-left: 20px;}
+    .cont .cont_menu li a{color: #000; font-weight: 800; font-size: 14px;}
+    #cont{clear: both; width: 100vw; position: absolute; top: 160px;}
+    #cont li{float: left; width:100%; margin-left: 10px;}
+    .slide_01_inner{background: #fff; height: 260px; box-shadow: 1px 10px 4px rgba(0,0,0,.3); border-bottom: 1px solid #ccc;}
+    #cont .img_wrap{width: 100%;}
+    #cont .img_wrap img{display: block; width: 100%; height: auto;}
+    #cont .txt_wrap{text-align: center; margin-top: 5px; font-family: "나눔스퀘어라운드",sans-serif; line-height: 24px;}
+    #cont .txt_wrap h2{font-weight: 800; font-size: 14px;}
+    .more2{display: block; width: 80px; margin: 0 auto; color: #da291c; border: 1px solid #da291c; border-radius: 3px;  box-shadow: inset -1px -1px 2px rgba(0,0,0,.5), 1px 1px 3px rgba(0,0,0,.3); }
+    </style>
+    <script src="./js/ktswiper.min.js"></script>
+    <link rel="stylesheet" href="./css/ktswiper.css">
+    <script>
+    $(document).ready(function(){
+       $(".lst").click(function(){
+           $(".collap").addClass("on");
+           $(".wrap").addClass("on");
+       });
+        $(".close").click(function(){
+           $(".collap").removeClass("on");
+           $(".wrap").removeClass("on");
+       });
+        $(window).scroll(function(){
+            var par = parseInt($(window).scrollTop());
+            if(par>=200){
+                $(".hd").addClass("on");
+            } else{
+                $(".hd").removeClass("on");
+            }
+        });
+    });
+    $(document).ready(function(){
+        var wd = parseInt($(window).width());//창의 너비를 계산하여 wd변수에 저장
+        var intv = setInterval(function(){
+           nextAni(); //주기적으로 3초마다 nextAni() 함수를 실행
+        }, 3000);
+        function nextAni(){
+            //.img_box를 0.8초 동안 창의 너비 만큼 왼쪽으로 슬라이딩
+            $(".img_box").not(":animated").animate({"margin-left":-wd+"px"},800, function(){
+                //첫번째 .img_box의 자식인 li를 맨 끝으로 보냄
+                $(".img_box li").eq(0).appendTo($(".img_box"));
+                //.img_box의 왼쪽 마진의 0으로 설정
+                $(".img_box").css("margin-left","0px");
+                $(".btn_box li").eq(0).appendTo($(".btn_box"));
+                $(".btn_box li").removeClass("on");
+                $(".btn_box li").eq(0).addClass("on");
+            });
+        }
+        var sw = true;
+        $(".play").click(function(){
+           if(sw==true){
+               $(this).addClass("on");
+               clearInterval(intv);
+           } else{
+               $(this).removeClass("on");
+               nextAni();
+               intv = setInterval(function(){
+                   nextAni();
+               }, 4000);
+            }
+            sw= !sw;
+        });
+        //누른 버튼의 앞에 있는 요소는 모두 뒤로 보내고, 누른 해당 버튼의 모션이 실행
+        $(".btn_box li").click(function(){
+            var idx = $(this).index()-1;
+            clearInterval(intv);
+            for(var i=0;i<idx;i++){
+                $(".btn_box li").eq(0).appendTo($(".btn_box"));
+                $(".img_box li").eq(0).appendTo($(".img_box"));
+            }
+            nextAni();
+            intv = setInterval(function(){
+                   nextAni();
+            }, 3000);
+        });
+    });
+    $(document).ready(function() {
+        $("#cont").ktswiper({
+            infinite: true, //양방향 무한 모션
+            speed: 300, // 슬라이드 스피드
+            autoplay: false, //자동플레이 유무( false시 자동플레이 안됨 )
+            autoplaySpeed: 4000, // 자동플레이 스피드
+            slidesToShow: 3, //한 화면에 보여줄 아이템수
+            slidesToScroll: 2, // 한번에 슬라이드 시킬 아이템 개수
+            arrows: false //좌우 화살 버튼 노출 여부 ( false 시 안보임 )
+        });
+    });
+    </script>
+</head>
+<body>
+    <div class="wrap">
+        <header class="hd">
+            <div class="menu"></div>
+            <div class="logo"><a href=""></a></div>
+            <div class="t_list">
+                <label for="for.ck1" class="_btn"><img src="./image/main_icon1.png" alt="팝콘"></label>
+                <label for="for.ck2" class="_btn"><img src="./image/main_icon2.png" alt="바로예매"></label>
+            </div>
+        </header>
+        <div class="visual">
+            <ul class="img_box">
+                <li class="item1">
+                    <img src="./image/main_img1.png" alt="악인전" class="img_con">
+                    <a href="" class="detail"></a>
+                </li>
+                <li class="item2">
+                    <img src="./image/main_img2.png" alt="알라딘" class="img_con">
+                    <a href="" class="detail"></a>
+                </li>
+                <li class="item3">
+                    <img src="./image/main_img3.png" alt="어린의뢰인" class="img_con">
+                    <a href="" class="detail"></a>
+                </li>
+                <li class="item4">
+                    <img src="./image/main_img4.png" alt="어벤저스-앤드게임" class="img_con">
+                    <a href="" class="detail"></a>
+                </li>
+            </ul>
+            <div class="btn_frame">
+                <ul class="btn_box">
+                    <li class="item1 in"><button></button></li>
+                    <li class="item2"><button></button></li>
+                    <li class="item3"><button></button></li>
+                    <li class="item4"><button></button></li>
+                </ul>
+                <div class="play"><button></button></div>
+            </div>
+        </div>
+        <div class="content">
+            <div class="cont">
+                <h2>영화예매</h2>
+                <a href="#" class="more">+</a>
+                <ul class="cont_menu">
+                    <li><a href="#">박스오피스</a></li>
+                    <li><a href="#">상영예정</a></li>
+                    <li><a href="#">큐레이션</a></li>
+                    <li><a href="#">무대인사</a></li>
+                </ul>
+            </div>
+                <ul class="ktswiper-track" id="cont">
+                    <li class="slide_01 ktswiper-slide" data-ktswiper-index="0" aria-hidden="true" tabindex="0">
+                        <div class="slide_01_inner">
+                            <div class="img_wrap">
+                                <img src="./image/movie_01.jpg" alt="악인전">
+                            </div>
+                            <div class="txt_wrap">
+                             <h2>악인전</h2>
+                             <p>예매율 24.9%</p>
+                             <a href="#" class="more2">바로예매</a>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="slide_01 ktswiper-slide" data-ktswiper-index="1" aria-hidden="true" tabindex="0">
+                        <div class="slide_01_inner">
+                            <div class="img_wrap">
+                                <img src="./image/movie_02.jpg" alt="알라딘">
+                            </div>
+                            <div class="txt_wrap">
+                            <h2>알라딘</h2>
+                             <p>예매율 19.1%</p>
+                             <a href="#" class="more2">바로예매</a>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="slide_01 ktswiper-slide" data-ktswiper-index="2" aria-hidden="true" tabindex="0">
+                        <div class="slide_01_inner">
+                            <div class="img_wrap">
+                                <img src="./image/movie_03.jpg" alt="어벤저스:엔드게임">
+                            </div>
+                            <div class="txt_wrap">
+                            <h2>어벤져스:엔드게임</h2>
+                             <p>예매율 9.0%</p>
+                             <a href="#" class="more2">바로예매</a>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="slide_01 ktswiper-slide" data-ktswiper-index="3" aria-hidden="true" tabindex="0">
+                        <div class="slide_01_inner">
+                            <div class="img_wrap">
+                                <img src="./image/movie_04.jpg" alt="걸캅스">
+                            </div>
+                            <div class="txt_wrap">
+                            <h2>걸캅스</h2>
+                             <p>예매율 8.0%</p>
+                             <a href="#" class="more2">바로예매</a>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="slide_01 ktswiper-slide" data-ktswiper-index="4" aria-hidden="true" tabindex="0">
+                        <div class="slide_01_inner">
+                            <div class="img_wrap">
+                                <img src="./image/movie_05.jpg" alt="어린의뢰인">
+                            </div>
+                            <div class="txt_wrap">
+                            <h2>어린 의뢰인</h2>
+                             <p>예매율 6.0%</p>
+                             <a href="#" class="more2">바로예매</a>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="slide_01 ktswiper-slide" data-ktswiper-index="5" aria-hidden="true" tabindex="0">
+                        <div class="slide_01_inner">
+                            <div class="img_wrap">
+                                <img src="./image/movie_06.jpg" alt="배심원들">
+                            </div>
+                            <div class="txt_wrap">
+                            <h2>배심원들</h2>
+                             <p>예매율 3.3%</p>
+                             <a href="#" class="more2">바로예매</a>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="slide_01 ktswiper-slide" data-ktswiper-index="6" aria-hidden="true" tabindex="0">
+                        <div class="slide_01_inner">
+                            <div class="img_wrap">
+                                <img src="./image/movie_07.jpg" alt="엑스맨">
+                            </div>
+                            <div class="txt_wrap">
+                            <h2>엑스맨:다크 피닉스</h2>
+                             <p>예매율 2.2%</p>
+                             <a href="#" class="more2">바로예매</a>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="slide_01 ktswiper-slide" data-ktswiper-index="7" aria-hidden="true" tabindex="0">
+                        <div class="slide_01_inner">
+                            <div class="img_wrap">
+                                <img src="./image/movie_08.jpg" alt="호텔뭄바이">
+                            </div>
+                            <div class="txt_wrap">
+                            <h2>호텔뭄바이</h2>
+                             <p>예매율 0.8%</p>
+                             <a href="#" class="more2">바로예매</a>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+        </div>
+        <footer class="ft">
+            
+        </footer>
+    </div>
+</body>
+</html>

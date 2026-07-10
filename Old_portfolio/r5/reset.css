@@ -1,0 +1,9 @@
+@charset "utf-8";
+/* reset.css : Basic Style Setting By HTML's Style  */
+* { margin: 0; padding: 0; }
+body, html { width: 100%; font-family: 'Nanum Gothic', sans-serif; }    
+ul { list-style: none; }    
+a { text-decoration: none; }
+img {border: 0; }
+button, label, input { background-image:none; background-color:transparent;
+outline: 0; border: 0; }  

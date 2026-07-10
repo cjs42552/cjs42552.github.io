@@ -1,0 +1,296 @@
+@charset "UTF-8";
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: "나눔스퀘어라운드", sans-serif;
+}
+
+body,
+html {
+    width: 100%;
+    height: 100%;
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+.ck_item,
+.ra_item {
+    display: none;
+}
+
+.container {
+    width: 100%;
+    height: 100%;
+    padding: 0;
+}
+
+.hd {
+    height: 60px;
+    width: 100%;
+    background: #385ca0;
+}
+
+.lst_btn,
+.close_btn {
+    display: block;
+    width: 48px;
+    height: 48px;
+    background-repeat: no-repeat;
+    background-position: center center;
+    text-indent: -9999px;
+}
+
+.lst_btn {
+    position: absolute;
+    left: 10px;
+    top: 4px;
+    background-size: 28px auto;
+    background-image: url("./image/top_button.png")
+}
+
+.close_btn {
+    float: right;
+    background-size: 18px auto;
+    background-image: url("./image/img_close_btn.png")
+}
+
+.log_box {
+    clear: both;
+    width: 100px;
+    height: 100px;
+    border-radius: 53px;
+    border: 2px solid #3d7996;
+    background-image: url("./image/icon.png");
+    background-color: #efe9a0;
+    background-position: center center;
+    background-size: cover;
+    margin: 40px auto;
+}
+
+.breadcrumb {
+    text-align: center;
+    font-weight: 800;
+    font-size: 1.2em;
+    color: #555;
+}
+
+.left {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    left: -100%;
+    top: 0;
+    background: rgba(0, 0, 0, .2);
+    z-index: 999;
+    transition: 1s;
+}
+
+.collap_wrap {
+    width: 60%;
+    height: 100%;
+    background: #7599ab;
+    box-shadow: 1px 0 5px rgba(0, 0, 0, .3);
+}
+
+#ck1:checked ~ .left {
+    left: 0;
+}
+
+.gnb .dep1 {
+    text-indent: 20px;
+    color: #fff;
+    line-height: 40px;
+    font-weight: bold;
+    font-size: 1.5em;
+}
+
+.gnb .dep1 a {
+    display: block;
+    color: #bbe0f2;
+    text-indent: 60px;
+    font-size: 0.8em;
+}
+
+.sub {
+    height: 0;
+    overflow: hidden;
+    opacity: 0;
+    transition: 0.5s;
+}
+
+.ra_item:checked ~ .sub {
+    height: auto;
+    opacity: 1;
+}
+
+.ra_item:checked ~ label {
+    color: #fdf9c7;
+}
+
+.abs_item {
+    width: 100%;
+    height: 60px;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.logo {
+    display: block;
+    width: 98px;
+    height: auto;
+    margin: 15px auto;
+}
+
+.logo img {
+    width: 98px;
+    height: auto;
+}
+
+.share_btn,
+.order_btn,
+.login_btn {
+    display: block;
+    width: 30px;
+    height: 30px;
+    color: #fff;
+    line-height: 40px;
+    text-align: center;
+    font-size: 20px;
+    position: absolute;
+    top: 10px;
+}
+
+.login_btn {
+    right: 3px;
+}
+
+.order_btn {
+    right: 40px;
+}
+
+.share_btn {
+    right: 80px;
+}
+
+.order_frame,
+.sns_frame {
+    position: fixed;
+    top: -999px;
+    left: 0;
+    z-index: 990;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.2);
+    transition: 1s;
+}
+
+.sns_box {
+    width: 100px;
+    height: 100px;
+    margin: 0 auto;
+    margin-top: 130px;
+    background: #f1f1f1;
+    box-shadow: 0 0 5px rgba(0, 0, 0, .2);
+}
+
+.sns_box li {
+    float: left;
+    width: 50px;
+    height: 50px;
+    line-height: 50px;
+    float: left;
+}
+
+.sns_box li a {
+    color: #333;
+    text-align: center;
+    line-height: 50px;
+    font-size: 50px;
+}
+
+.ck2_close {
+    display: block;
+    width: 10px;
+    height: 10px;
+    position: absolute;
+    right: 120px;
+    top: 110px;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-image: url("./image/img_close_btn.png");
+    background-size: cover;
+}
+
+.order_box {
+    width: 200px;
+    height: px;
+    margin: 0 auto;
+    margin-top: 120px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, .2);
+}
+
+.order_box img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+.ck3_close {
+    display: block;
+    width: 10px;
+    height: 10px;
+    position: absolute;
+    right: 75px;
+    top: 100px;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-image: url("./image/img_close_btn.png");
+    background-size: cover;
+}
+
+#ck2:checked ~ .sns_frame {
+    top: 0;
+}
+
+#ck3:checked ~ .order_frame {
+    top: 0;
+}
+
+.ft {
+    width: 100%;
+    height: 100px;
+    background: #eee;
+    border-top: 1px solid #ccc;
+}
+
+.fnb {
+    clear: both;
+    width: 200px;
+    margin: 0 auto;
+    padding-top: 10px;
+}
+
+.fnb li {
+    float: left;
+    padding: 6px;
+}
+
+.fnb li.item1 a:after {
+    content: "|";
+    padding-left: 15px;
+}
+
+.copyright {
+    clear: both;
+    text-align: center;
+    color: #333;
+    line-height: 2.4;
+}

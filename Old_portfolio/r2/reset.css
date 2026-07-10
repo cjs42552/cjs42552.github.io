@@ -1,0 +1,25 @@
+@charset "utf-8";
+/* font-family:'NanumSquareL';
+font-family:'NanumSquareR';
+font-family:'NotoSansL';
+font-family:'NotoSansR'; */
+* { margin:0; margin:0;  }
+body, html { width:100%; font-size:14px; font-family:'NotoSansL', sans-serif; 
+background-color:#fff; color:#333; overflow-x:hidden; }
+ul { list-style:none; }
+a { text-decoration:none;} 
+label, input, a, button { background-color:transparent; background-image:none; 
+border:0; outline:0; user-select:none; }
+h1, h2, h3, h4, h5, h6 { line-height:3; }
+h1 { font-size:4.2em; }
+h2 { font-size:3em; }
+h3 { font-size:2em; }
+h4 { font-size:1.4em; }
+h5 { font-size:1em; }
+h6 { font-size:0.8em; }
+p { padding:1em; font-size:1em; }
+.page { clear:both; position:relative; width:100vw; height:100vh; overflow:hidden; 
+box-sizing:border-box; }
+.page:after { content:""; display:block; clear:both; width:100%; height:1px;            background-color:transparent; }
+
+
